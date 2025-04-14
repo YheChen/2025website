@@ -13,7 +13,7 @@ export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>Yanzhen Chen</title>
+        <title>Yanzhen Chen | Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen bg-background text-base md:text-lg">
