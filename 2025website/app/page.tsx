@@ -137,7 +137,7 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center gap-4 text-center">
             <Image
-              src="/placeholder.svg?height=150&width=150"
+              src="/YanzhenIconWebsite.jpg?height=150&width=150"
               alt="Yanzhen Chen"
               width={150}
               height={150}
@@ -147,7 +147,7 @@ export default function Portfolio() {
               Yanzhen Chen
             </h1>
             <h2 className="text-xl text-muted-foreground sm:text-2xl">
-              Mathematics & Statistics Student
+              Mathematics, Statistics, Computer Science Student
             </h2>
             <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
               University of Toronto student passionate about software
