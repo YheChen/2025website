@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className="border-t py-6">
       <div className="container flex justify-center items-center">
         <p className="text-center text-sm leading-loose text-muted-foreground">
-          © {new Date().getFullYear()} Yanzhen Chen. All rights reserved.
+          © {new Date().getFullYear()} Yanzhen Chen
         </p>
       </div>
     </footer>

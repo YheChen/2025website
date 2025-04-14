@@ -12,10 +12,10 @@ export default function Home() {
     >
       <div className="flex flex-col items-center gap-4 text-center">
         <Image
-          src="/YanzhenIconWebsite.jpg?height=150&width=150"
+          src="/YanzhenSquare.png?height=250&width=250"
           alt="Yanzhen Chen"
-          width={150}
-          height={150}
+          width={250}
+          height={250}
           className="rounded-full border-4 border-muted"
         />
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
