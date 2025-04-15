@@ -90,7 +90,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-[980px] py-8 md:py-12">
+    <section
+      id="projects"
+      className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
+    >
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl">
           Projects

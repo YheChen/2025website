@@ -1,7 +1,10 @@
 // components/About.tsx
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-[980px] py-8 md:py-12">
+    <section
+      id="about"
+      className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
+    >
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl">
           About Me
