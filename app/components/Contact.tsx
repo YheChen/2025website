@@ -87,7 +87,7 @@ export default function Contact() {
               <div className="grid gap-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-muted-foreground" />
-                  <span>yzc.chen@mail.utoronto.ca</span>
+                  <span>professional@yanzhenchen.ca</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-muted-foreground" />
