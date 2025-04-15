@@ -7,20 +7,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function Leadership() {
+export default function Experience() {
   return (
     <section id="leadership" className="mx-auto max-w-[980px] py-8 md:py-12">
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">
-          Leadership and Volunteer Experience
+          Experience
         </h2>
         <Card>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
-            {/* CSSU Logo */}
+            {/* Fields Logo */}
             <div className="flex-shrink-0">
               <Image
-                src="/CSSULOGO.webp"
-                alt="CSSU Logo"
+                src="/Fields.webp"
+                alt="Fields Logo"
                 width={64}
                 height={64}
                 className="rounded-md object-contain"
@@ -30,25 +30,24 @@ export default function Leadership() {
             {/* Card text content */}
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
-                <CardTitle>VP External Relations</CardTitle>
+                <CardTitle>Workshop Facilitator</CardTitle>
                 <CardDescription>
-                  Computer Science Student Union, University of Toronto | May
-                  2024 – Present
+                  The Fields Institute For Research In Mathematical Sciences |
+                  September 2024 – Present
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
                   <li>
-                    Secured $9,000+ in sponsorships from Google, Dayforce, and
-                    others
+                    The Fields Trip program gives schools across Ontario the
+                    chance to bring students to the Department of Mathematics
+                    for a 75-minute math workshop. These sessions introduce
+                    students to mathematical concepts not typically covered in
+                    the standard curriculum.
                   </li>
                   <li>
-                    Organized resume panels and increased event attendance by
-                    30%
-                  </li>
-                  <li>
-                    Ran a career fair with 300+ student attendees and four
-                    companies
+                    As a workshop facilitator, I prepare lesson plans ahead of
+                    time and lead students through the chosen topic.
                   </li>
                 </ul>
               </CardContent>
