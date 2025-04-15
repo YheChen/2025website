@@ -106,13 +106,13 @@ export default function Projects() {
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="aspect-video overflow-hidden rounded-md">
+                <div className="aspect-video overflow-hidden rounded-md group">
                   <Image
                     src={project.imgSrc}
                     alt={project.imgAlt}
                     width={350}
                     height={200}
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
                   />
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
