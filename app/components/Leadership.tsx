@@ -18,7 +18,8 @@ export default function Leadership() {
           <CardHeader>
             <CardTitle>VP External Relations</CardTitle>
             <CardDescription>
-              CSSU, University of Toronto | May 2024 – April 2026
+              Computer Science Student Union, University of Toronto | May 2024 –
+              April 2026
             </CardDescription>
           </CardHeader>
           <CardContent>

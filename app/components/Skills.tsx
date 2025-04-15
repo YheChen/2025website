@@ -1,51 +1,39 @@
 // components/Skills.tsx
-import {
-  Globe,
-  Database,
-  Server,
-  Smartphone,
-  Code,
-  BarChart,
-  Layers,
-  PenTool,
-  Cloud,
-  Terminal,
-  GitBranch,
-} from "lucide-react";
+import Image from "next/image";
 
 const skills = {
   languages: [
-    { label: "Python", icon: "PY" },
-    { label: "Java", icon: "JV" },
-    { label: "C", icon: "C" },
-    { label: "JavaScript", icon: "JS" },
-    { label: "TypeScript", icon: "TS" },
-    { label: "HTML/CSS", icon: <Globe className="h-8 w-8" /> },
-    { label: "MySQL", icon: <Database className="h-8 w-8" /> },
-    { label: "R", icon: "R" },
+    { label: "Python" },
+    { label: "Java" },
+    { label: "C" },
+    { label: "JavaScript" },
+    { label: "TypeScript" },
+    { label: "HTML" },
+    { label: "CSS" },
+    { label: "SQL" },
+    { label: "R" },
   ],
   frameworks: [
-    { label: "Next.js", icon: "N" },
-    { label: "Node.js", icon: <Server className="h-8 w-8" /> },
-    { label: "Express", icon: "EX" },
-    { label: "Expo", icon: <Smartphone className="h-8 w-8" /> },
-    { label: "React Native", icon: <Smartphone className="h-8 w-8" /> },
-    { label: "Tailwind", icon: "TW" },
-    { label: "React.js", icon: <Code className="h-8 w-8" /> },
-    { label: "Pandas", icon: <BarChart className="h-8 w-8" /> },
-    { label: "NumPy", icon: "NP" },
-    { label: "PyTorch", icon: "PT" },
-    { label: "Java Swing", icon: <Layers className="h-8 w-8" /> },
+    { label: "Next.js" },
+    { label: "Node.js" },
+    { label: "Tailwind" },
+    { label: "React.js" },
+    { label: "React Native" },
+    { label: "Java Swing" },
+    { label: "Pandas" },
+    { label: "NumPy" },
+    { label: "PyTorch" },
   ],
   tools: [
-    { label: "Vim", icon: <PenTool className="h-8 w-8" /> },
-    { label: "MongoDB", icon: <Database className="h-8 w-8" /> },
-    { label: "Firebase", icon: <Cloud className="h-8 w-8" /> },
-    { label: "Google Colab", icon: "GC" },
-    { label: "Jupyter", icon: <Terminal className="h-8 w-8" /> },
-    { label: "SAS Studio", icon: "SAS" },
-    { label: "Git", icon: <GitBranch className="h-8 w-8" /> },
-    { label: "Markdown", icon: "MD" },
+    { label: "Git" },
+    { label: "GitHub" },
+    { label: "MongoDB" },
+    { label: "Firebase" },
+    { label: "Google Colab" },
+    { label: "Jupyter" },
+    { label: "SAS Studio" },
+    { label: "Figma" },
+    { label: "Markdown" },
   ],
 };
 
@@ -54,20 +42,39 @@ function SkillCategory({
   items,
 }: {
   title: string;
-  items: { label: string; icon: React.ReactNode | string }[];
+  items: { label: string }[];
 }) {
   return (
     <div className="flex flex-col gap-4">
       <h3 className="text-xl font-semibold text-center">{title}</h3>
       <div className="flex flex-wrap justify-center gap-6">
-        {items.map(({ label, icon }) => (
-          <div className="flex flex-col items-center gap-2" key={label}>
-            <div className="bg-slate-100 dark:bg-slate-800 rounded-full p-4 w-16 h-16 flex items-center justify-center text-2xl">
-              {typeof icon === "string" ? <span>{icon}</span> : icon}
+        {items.map(({ label }) => {
+          const skillImageMap: Record<string, string> = {
+            "React Native": "reactnative",
+            "Google Colab": "googlecolab",
+            "Java Swing": "javaswing",
+            "SAS Studio": "sas",
+          };
+
+          const fileName =
+            skillImageMap[label] || label.toLowerCase().replace(/\s|\./g, "");
+
+          const logoSrc = `/skills/${fileName}.webp`;
+          return (
+            <div className="flex flex-col items-center gap-2" key={label}>
+              <div className="bg-slate-100 dark:bg-slate-800 rounded-full p-4 w-16 h-16 flex items-center justify-center">
+                <Image
+                  src={logoSrc}
+                  alt={label}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-sm text-center">{label}</span>
             </div>
-            <span className="text-sm">{label}</span>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -81,7 +88,7 @@ export default function Skills() {
     >
       <div className="flex flex-col gap-10">
         <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl text-center">
-          Skills
+          Skills and Technologies
         </h2>
         <SkillCategory title="Languages" items={skills.languages} />
         <SkillCategory

@@ -23,9 +23,9 @@ export default function Contact() {
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
-              <CardTitle>Get in Touch</CardTitle>
+              <CardTitle>Send a message</CardTitle>
               <CardDescription>
-                Fill out the form and I'll get back to you as soon as possible.
+                Fill in the form and I'll get back to you as soon as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -108,17 +108,6 @@ export default function Contact() {
                     className="hover:underline"
                   >
                     linkedin.com/in/yanzhenchen
-                  </Link>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Globe className="h-5 w-5 text-muted-foreground" />
-                  <Link
-                    href="https://yanzhenchen.ca"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:underline"
-                  >
-                    yanzhenchen.ca
                   </Link>
                 </div>
                 <div className="flex items-center gap-3">
