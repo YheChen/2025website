@@ -18,8 +18,8 @@ const skills = {
     { label: "Node.js" },
     { label: "Tailwind" },
     { label: "React.js" },
-    { label: "React Native" },
-    { label: "Java Swing" },
+    { label: "React Native", short: "Native" },
+    { label: "Java Swing", short: "JSwing" },
     { label: "Pandas" },
     { label: "NumPy" },
     { label: "Matplotlib" },
@@ -30,9 +30,9 @@ const skills = {
     { label: "GitHub" },
     { label: "MongoDB" },
     { label: "Firebase" },
-    { label: "Google Colab" },
+    { label: "Colab" },
     { label: "Jupyter" },
-    { label: "SAS Studio" },
+    { label: "SAS Studio", short: "SAS" },
     { label: "Figma" },
     { label: "Markdown" },
   ],
@@ -43,13 +43,13 @@ function SkillCategory({
   items,
 }: {
   title: string;
-  items: { label: string }[];
+  items: { label: string; short?: string }[];
 }) {
   return (
     <div className="flex flex-col gap-4">
       <h3 className="text-xl font-semibold text-center">{title}</h3>
-      <div className="flex flex-wrap justify-center gap-6">
-        {items.map(({ label }) => {
+      <div className="flex flex-wrap justify-center gap-5">
+        {items.map(({ label, short }) => {
           const skillImageMap: Record<string, string> = {
             "React Native": "reactnative",
             "Google Colab": "googlecolab",
@@ -62,8 +62,11 @@ function SkillCategory({
 
           const logoSrc = `/skills/${fileName}.webp`;
           return (
-            <div className="flex flex-col items-center gap-2" key={label}>
-              <div className="bg-slate-100 dark:bg-slate-800 rounded-full p-4 w-16 h-16 flex items-center justify-center">
+            <div
+              className="flex flex-col items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-xl px-4 py-2 w-20 hover:scale-125 transition-transform duration-300 ease-in-out"
+              key={label}
+            >
+              <div className="bg-white rounded-full p-4 w-16 h-16 flex items-center justify-center">
                 <Image
                   src={logoSrc}
                   alt={label}
@@ -72,7 +75,7 @@ function SkillCategory({
                   className="object-contain"
                 />
               </div>
-              <span className="text-sm text-center">{label}</span>
+              <span className="text-sm text-center">{short || label}</span>
             </div>
           );
         })}
