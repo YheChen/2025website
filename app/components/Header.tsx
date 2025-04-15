@@ -27,10 +27,8 @@ export default function Header() {
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
-            <nav className="flex items-center justify-between md:hidden">
-              <Link href="/" className="flex items-center space-x-2">
-                <span className="font-bold">Yanzhen Chen</span>
-              </Link>
+            <nav className="flex items-center justify-between md:hidden w-full">
+              {/* Hamburger Menu on the left */}
               <Button variant="ghost" size="icon">
                 <span className="sr-only">Toggle menu</span>
                 <svg
@@ -50,6 +48,13 @@ export default function Header() {
                   <line x1="4" x2="20" y1="18" y2="18" />
                 </svg>
               </Button>
+
+              {/* Name in the center/right */}
+              <Link href="/" className="flex items-center space-x-2">
+                <span className="font-bold whitespace-nowrap">
+                  Yanzhen Chen
+                </span>
+              </Link>
             </nav>
           </div>
           <div className="flex items-center gap-2">
