@@ -1,0 +1,6 @@
+# robots.txt for yanzhenchen.ca
+
+User-agent: *
+Disallow:
+
+Sitemap: https://yanzhenchen.ca/sitemap.xml
