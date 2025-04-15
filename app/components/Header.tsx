@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center px-6 md:px-10 text-lg space-x-6">
+      <div className="flex justify-between items-center h-20 px-2 md:px-4 text-lg w-full max-w-7xl mx-auto">
         <div className="mr-4 hidden md:flex items-center space-x-6">
           <Link href="/" className="flex items-center">
             <span className="font-bold">Yanzhen Chen</span>
