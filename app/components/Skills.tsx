@@ -24,6 +24,7 @@ const skills = {
     { label: "NumPy" },
     { label: "Matplotlib" },
     { label: "PyTorch" },
+    { label: "ScikitLearn" },
   ],
   tools: [
     { label: "Git" },
