@@ -25,7 +25,8 @@ export default function Contact() {
             <CardHeader>
               <CardTitle>Send a message</CardTitle>
               <CardDescription>
-                Fill in the form and I'll get back to you as soon as possible.
+                Fill in the form and I'll get back to you as soon as I am
+                available.
               </CardDescription>
             </CardHeader>
             <CardContent>
