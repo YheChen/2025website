@@ -28,7 +28,7 @@ const projects = [
     description: "Phone tilt-based authentication system",
     tech: ["Next.js", "React Native", "Firebase"],
     imgAlt: "Gyroscopic Authenticator",
-    imgSrc: "/placeholder.svg?height=200&width=350",
+    imgSrc: "/TiltAuthThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/UofTHacks12",
     demo: "https://github.com/YheChen/UofTHacks12",
   },
