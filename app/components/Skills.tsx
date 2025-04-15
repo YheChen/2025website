@@ -22,6 +22,7 @@ const skills = {
     { label: "Java Swing" },
     { label: "Pandas" },
     { label: "NumPy" },
+    { label: "Matplotlib" },
     { label: "PyTorch" },
   ],
   tools: [

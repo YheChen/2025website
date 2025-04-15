@@ -38,7 +38,7 @@ export default function Education() {
                   HBSc. Mathematics & Statistics Majors, CS Minor
                 </CardTitle>
                 <CardDescription>
-                  University of Toronto — Expected Graduation: May 2026
+                  University of Toronto — September 2023 - May 2027
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
