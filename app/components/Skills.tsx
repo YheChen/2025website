@@ -23,12 +23,8 @@ const skills = {
     { label: "Pandas" },
     { label: "NumPy" },
     { label: "Matplotlib" },
-    { label: "PyTorch" },
-    { label: "ScikitLearn" },
   ],
   tools: [
-    { label: "Git" },
-    { label: "GitHub" },
     { label: "MongoDB" },
     { label: "Firebase" },
     { label: "Colab" },

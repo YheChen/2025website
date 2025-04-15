@@ -16,7 +16,7 @@ import { Badge } from "@/components/ui/badge";
 const projects = [
   {
     title: "CSSU Website",
-    description: "Rebuilt the Computer Science Student Union Website",
+    description: "Website representing over 4000 CS students at UofT",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     imgAlt: "CSSU Website",
     imgSrc: "/projects/CSSUSiteThumbnail.webp?height=200&width=350",
@@ -67,6 +67,15 @@ const projects = [
     imgSrc: "/projects/PokedexThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/pokedex",
     demo: "pokedex-yhechen.vercel.app/",
+  },
+  {
+    title: "Graphing Calculator",
+    description: "Online graphing calculator",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "Todo List",
+    imgSrc: "/projects/GraphingCalcThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/GraphingCalculator",
+    demo: "https://v0-graphing-calculator-app.vercel.app/",
   },
   {
     title: "Todo List",
