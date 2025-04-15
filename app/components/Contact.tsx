@@ -1,6 +1,7 @@
-// components/Contact.tsx
+"use client";
 import Link from "next/link";
-import { Mail, Github, Linkedin, Globe } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +12,8 @@ import {
 } from "@/components/ui/card";
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm("xgvaqqzk"); // ✅ Moved here
+
   return (
     <section
       id="contact"
@@ -30,52 +33,84 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="grid gap-4">
-                <div className="grid gap-2">
-                  <label
-                    htmlFor="name"
-                    className="text-sm font-medium leading-none"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    placeholder="Your name"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  />
-                </div>
-                <div className="grid gap-2">
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-medium leading-none"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="Your email"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  />
-                </div>
-                <div className="grid gap-2">
-                  <label
-                    htmlFor="message"
-                    className="text-sm font-medium leading-none"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    placeholder="Your message"
-                    className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  />
-                </div>
-                <Button type="submit">Send Message</Button>
-              </form>
+              {state.succeeded ? (
+                <p className="text-green-600 text-sm">
+                  Thanks for your message!
+                </p>
+              ) : (
+                <form onSubmit={handleSubmit} className="grid gap-4">
+                  <div className="grid gap-2">
+                    <label
+                      htmlFor="name"
+                      className="text-sm font-medium leading-none"
+                    >
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    />
+                    <ValidationError
+                      prefix="Name"
+                      field="name"
+                      errors={state.errors}
+                    />
+                  </div>
+
+                  <div className="grid gap-2">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-medium leading-none"
+                    >
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="Your email"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    />
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                    />
+                  </div>
+
+                  <div className="grid gap-2">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-medium leading-none"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      placeholder="Your message"
+                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    />
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
+                    />
+                  </div>
+
+                  <Button type="submit" disabled={state.submitting}>
+                    {state.submitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
-
           <Card>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
