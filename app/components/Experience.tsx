@@ -9,7 +9,10 @@ import {
 
 export default function Experience() {
   return (
-    <section id="leadership" className="mx-auto max-w-[980px] py-8 md:py-12">
+    <section
+      id="experience"
+      className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
+    >
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">
           Experience

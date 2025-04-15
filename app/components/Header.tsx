@@ -12,17 +12,22 @@ export default function Header() {
             <span className="font-bold">Yanzhen Chen</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
-            {["about", "projects", "skills", "education", "contact"].map(
-              (id) => (
-                <Link
-                  key={id}
-                  href={`#${id}`}
-                  className="transition-colors hover:text-foreground/80"
-                >
-                  {id.charAt(0).toUpperCase() + id.slice(1)}
-                </Link>
-              )
-            )}
+            {[
+              "about",
+              "projects",
+              "skills",
+              "education",
+              "experience",
+              "contact",
+            ].map((id) => (
+              <Link
+                key={id}
+                href={`#${id}`}
+                className="transition-colors hover:text-foreground/80"
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </Link>
+            ))}
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
@@ -51,7 +56,7 @@ export default function Header() {
 
               {/* Name in the center/right */}
               <Link href="/" className="flex items-center space-x-2">
-                <span className="font-bold whitespace-nowrap">
+                <span className="font-bold whitespace-nowrap text-[0.95rem] md:text-lg">
                   Yanzhen Chen
                 </span>
               </Link>
