@@ -12,7 +12,7 @@ export default function Home() {
     >
       <div className="flex flex-col items-center gap-4 text-center">
         <Image
-          src="/YanzhenSquare.png?height=250&width=250"
+          src="/YanzhenSquare.webp?height=250&width=250"
           alt="Yanzhen Chen"
           width={250}
           height={250}
