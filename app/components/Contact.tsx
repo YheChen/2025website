@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("xgvaqqzk"); // ✅ Moved here
+  const [state, handleSubmit] = useForm("xgvaqqzk");
 
   return (
     <section
@@ -122,7 +122,12 @@ export default function Contact() {
               <div className="grid gap-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-muted-foreground" />
-                  <span>professional@yanzhenchen.ca</span>
+                  <Link
+                    href="mailto:professional@yanzhenchen.ca"
+                    className="hover:underline"
+                  >
+                    professional@yanzhenchen.ca
+                  </Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-muted-foreground" />
