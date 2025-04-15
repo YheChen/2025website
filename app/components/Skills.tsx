@@ -19,7 +19,6 @@ const skills = {
     { label: "Tailwind" },
     { label: "React.js" },
     { label: "React Native", short: "Native" },
-    { label: "Java Swing", short: "JSwing" },
     { label: "Pandas" },
     { label: "NumPy" },
     { label: "Matplotlib" },
