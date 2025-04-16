@@ -1,12 +1,30 @@
 "use client";
 import Link from "next/link";
 import { Github, Linkedin, FileText } from "lucide-react";
+import {
+  Home,
+  FolderKanban,
+  BookOpen,
+  GraduationCap,
+  Briefcase,
+  Mail,
+} from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const items = [
+    { id: "about", icon: <Home className="w-5 h-5" /> },
+    { id: "projects", icon: <FolderKanban className="w-5 h-5" /> },
+    { id: "skills", icon: <BookOpen className="w-5 h-5" /> },
+    { id: "education", icon: <GraduationCap className="w-5 h-5" /> },
+    { id: "experience", icon: <Briefcase className="w-5 h-5" /> },
+    { id: "contact", icon: <Mail className="w-5 h-5" /> },
+  ];
 
   return (
     <>
@@ -22,14 +40,7 @@ export default function Header() {
               <span className="font-bold">Yanzhen Chen</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              {[
-                "about",
-                "projects",
-                "skills",
-                "education",
-                "experience",
-                "contact",
-              ].map((id) => (
+              {items.map(({ id }) => (
                 <Link
                   key={id}
                   href={`/${id}`}
@@ -118,44 +129,40 @@ export default function Header() {
           <>
             {/* Backdrop with fade-in */}
             <motion.div
-              className="fixed inset-0 bg-black bg-opacity-50 z-40"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsMenuOpen(false)}
-            />
-
-            {/* Slide-in Menu */}
-            <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 w-64 h-full bg-background z-50 shadow-lg p-6 flex flex-col space-y-4"
+              className="fixed top-0 left-0 w-64 h-full bg-background z-50 shadow-lg p-6 flex flex-col justify-between rounded-br-xl"
             >
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="self-end text-sm text-muted-foreground"
-              >
-                Close ✕
-              </button>
-              {[
-                "about",
-                "projects",
-                "skills",
-                "education",
-                "experience",
-                "contact",
-              ].map((id) => (
-                <Link
-                  key={id}
-                  href={`/${id}`}
+              {/* Top: Close + Nav Links */}
+              <div className="flex flex-col gap-6">
+                <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-medium hover:underline"
+                  className="self-end text-sm text-muted-foreground"
                 >
-                  {id.charAt(0).toUpperCase() + id.slice(1)}
-                </Link>
-              ))}
+                  Close ✕
+                </button>
+
+                {items.map(({ id, icon }) => (
+                  <Link
+                    key={id}
+                    href={`/${id}`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full flex items-center gap-3 px-4 py-2 text-lg font-semibold rounded-md hover:bg-muted hover:text-foreground transition-colors"
+                  >
+                    {icon}
+                    {id.charAt(0).toUpperCase() + id.slice(1)}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Bottom: Copyright */}
+              <div className="px-4">
+                <p className="text-sm text-muted-foreground">
+                  © {new Date().getFullYear()} Yanzhen Chen
+                </p>
+              </div>
             </motion.div>
           </>
         )}
