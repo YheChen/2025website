@@ -145,7 +145,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 w-64 h-full bg-background z-50 shadow-lg p-6 flex flex-col justify-between rounded-br-xl"
+              className="fixed top-0 left-0 w-64 h-full bg-background z-50 shadow-lg p-6 flex flex-col justify-between"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the sidebar
             >
               <div className="flex flex-col gap-6 relative">
