@@ -43,7 +43,7 @@ export default function Header() {
               {items.map(({ id }) => (
                 <Link
                   key={id}
-                  href={`/${id}`}
+                  href={`/#${id}`}
                   className="transition-colors hover:text-foreground/80"
                 >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
@@ -127,37 +127,60 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Backdrop with fade-in */}
+            {/* Backdrop (click to close) */}
             <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black"
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            {/* Sidebar */}
+            <motion.div
+              key="sidebar"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 w-64 h-full bg-background z-50 shadow-lg p-6 flex flex-col justify-between rounded-br-xl"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the sidebar
             >
-              {/* Top: Close + Nav Links */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 relative">
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="self-end text-sm text-muted-foreground"
+                  className="absolute top-0 right-0 text-muted-foreground p-1"
                 >
-                  Close ✕
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
                 </button>
 
-                {items.map(({ id, icon }) => (
-                  <Link
-                    key={id}
-                    href={`/${id}`}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="w-full flex items-center gap-3 px-4 py-2 text-lg font-semibold rounded-md hover:bg-muted hover:text-foreground transition-colors"
-                  >
-                    {icon}
-                    {id.charAt(0).toUpperCase() + id.slice(1)}
-                  </Link>
-                ))}
+                <div className="pt-8 flex flex-col gap-4">
+                  {items.map(({ id, icon }) => (
+                    <Link
+                      key={id}
+                      href={`/#${id}`}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="w-full flex items-center gap-3 px-4 py-2 text-lg font-semibold rounded-md hover:bg-muted hover:text-foreground transition-colors"
+                    >
+                      {icon}
+                      {id.charAt(0).toUpperCase() + id.slice(1)}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
-              {/* Bottom: Copyright */}
               <div className="px-4">
                 <p className="text-sm text-muted-foreground">
                   © {new Date().getFullYear()} Yanzhen Chen
