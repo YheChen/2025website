@@ -3,6 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Yanzhen Chen | Portfolio",
+  description: "Yanzhen Chen's online portfolio",
 };
 
 export default function RootLayout({
