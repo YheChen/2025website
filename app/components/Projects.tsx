@@ -15,6 +15,15 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    title: "TorontoGuessr",
+    description: "Test your knowledge of downtown Toronto",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "TorontoGuessr",
+    imgSrc: "/projects/uoftlogo.webp?height=200&width=350",
+    github: "https://github.com/YheChen/TorontoGuessr",
+    demo: "https://torontoguessr.vercel.app/",
+  },
+  {
     title: "CSSU Website",
     description: "Website representing over 4000 CS students at UofT",
     tech: ["Next.js", "TypeScript", "Tailwind"],
@@ -164,7 +173,7 @@ export default function Projects() {
             rel="noreferrer"
           >
             <Button variant="outline">
-              View More on GitHub
+              View all on GitHub
               <Github className="ml-2 h-4 w-4" />
             </Button>
           </Link>
