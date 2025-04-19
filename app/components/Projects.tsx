@@ -21,7 +21,7 @@ const projects = [
     imgAlt: "CSSU Website",
     imgSrc: "/projects/CSSUSiteThumbnail.webp?height=200&width=350",
     github: "https://github.com/cssu/cssu.ca",
-    demo: "www.cssu.ca",
+    demo: "https://www.cssu.ca",
   },
   {
     title: "Gyroscopic Authenticator",
@@ -66,7 +66,7 @@ const projects = [
     imgAlt: "Pokedex Web App",
     imgSrc: "/projects/PokedexThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/pokedex",
-    demo: "pokedex-yhechen.vercel.app/",
+    demo: "https://pokedex-yhechen.vercel.app/",
   },
   {
     title: "Graphing Calculator",
@@ -75,7 +75,7 @@ const projects = [
     imgAlt: "Todo List",
     imgSrc: "/projects/GraphingCalcThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/GraphingCalculator",
-    demo: "https://v0-graphing-calculator-app.vercel.app/",
+    demo: "https://yz-graphing-calculator-app.vercel.app/",
   },
   {
     title: "Todo List",
@@ -84,7 +84,7 @@ const projects = [
     imgAlt: "Todo List",
     imgSrc: "/projects/TodoListThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/chentodo",
-    demo: "chentodo.vercel.app/",
+    demo: "https://chentodo.vercel.app/",
   },
   {
     title: "Guess Who Game",
@@ -93,9 +93,13 @@ const projects = [
     imgAlt: "Guess Who Game",
     imgSrc: "/projects/GuessWhoThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/GuessWho",
-    demo: "cssuguesswho.vercel.app",
+    demo: "https://cssuguesswho.vercel.app",
   },
 ];
+
+function ensureHttps(url: string) {
+  return url.startsWith("http") ? url : `https://${url}`;
+}
 
 export default function Projects() {
   return (
@@ -132,18 +136,22 @@ export default function Projects() {
               </CardContent>
               <CardFooter>
                 <div className="flex gap-2">
-                  <Link href={project.github} target="_blank" rel="noreferrer">
+                  <a href={project.github} target="_blank" rel="noreferrer">
                     <Button variant="outline" size="sm">
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </Button>
-                  </Link>
-                  <Link href={project.demo} target="_blank" rel="noreferrer">
+                  </a>
+                  <a
+                    href={ensureHttps(project.demo)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Button variant="outline" size="sm">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Demo
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </CardFooter>
             </Card>
