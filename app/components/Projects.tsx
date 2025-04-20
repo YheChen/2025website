@@ -17,9 +17,9 @@ const projects = [
   {
     title: "TorontoGuessr",
     description: "Test your knowledge of downtown Toronto",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
+    tech: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
     imgAlt: "TorontoGuessr",
-    imgSrc: "/projects/uoftlogo.webp?height=200&width=350",
+    imgSrc: "/projects/TorontoGuessrThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/TorontoGuessr",
     demo: "https://torontoguessr.vercel.app/",
   },
