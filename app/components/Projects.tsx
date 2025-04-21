@@ -78,6 +78,15 @@ const projects = [
     demo: "https://pokedex-yhechen.vercel.app/",
   },
   {
+    title: "Grade Calculator",
+    description: "Calculator for course grades that supports multiple courses",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "Grade Calculator",
+    imgSrc: "/projects/GradeCalculatorThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/GradeCalculator",
+    demo: "https://multi-grade-calculator.vercel.app/",
+  },
+  {
     title: "Graphing Calculator",
     description: "Online graphing calculator",
     tech: ["Next.js", "TypeScript", "Tailwind"],
@@ -87,15 +96,6 @@ const projects = [
     demo: "https://yz-graphing-calculator-app.vercel.app/",
   },
   {
-    title: "Todo List",
-    description: "Simple task management app",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    imgAlt: "Todo List",
-    imgSrc: "/projects/TodoListThumbnail.webp?height=200&width=350",
-    github: "https://github.com/YheChen/chentodo",
-    demo: "https://chentodo.vercel.app/",
-  },
-  {
     title: "Guess Who Game",
     description: "Fun guessing game with friends",
     tech: ["Next.js", "JavaScript", "Tailwind"],
@@ -103,6 +103,15 @@ const projects = [
     imgSrc: "/projects/GuessWhoThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/GuessWho",
     demo: "https://cssuguesswho.vercel.app",
+  },
+  {
+    title: "Todo List",
+    description: "Simple task management app",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "Todo List",
+    imgSrc: "/projects/TodoListThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/chentodo",
+    demo: "https://chentodo.vercel.app/",
   },
 ];
 
