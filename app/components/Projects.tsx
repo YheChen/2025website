@@ -15,6 +15,15 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    title: "GuessUp",
+    description: "Mobile charades game with custom prompts",
+    tech: ["React Native", "TypeScript"],
+    imgAlt: "GuessUp",
+    imgSrc: "/projects/GuessUpThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/GuessUp",
+    demo: "https://github.com/YheChen/GuessUp",
+  },
+  {
     title: "TorontoGuessr",
     description: "Test your knowledge of downtown Toronto",
     tech: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
@@ -25,7 +34,7 @@ const projects = [
   },
   {
     title: "CSSU Website",
-    description: "Website representing over 4000 CS students at UofT",
+    description: "Website representing over 5000 CS students at UofT",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     imgAlt: "CSSU Website",
     imgSrc: "/projects/CSSUSiteThumbnail.webp?height=200&width=350",
