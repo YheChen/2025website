@@ -22,6 +22,39 @@ export default function Experience() {
             {/* Fields Logo */}
             <div className="flex-shrink-0">
               <Image
+                src="/EngCareerCentre.webp"
+                alt="Eng Career Centre Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+              />
+            </div>
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
+                <CardTitle>Educational Technology & UX Developer</CardTitle>
+                <CardDescription>
+                  University of Toronto, Faculty of Applied Science, Engineering
+                  Career Centre | May 2025 – Present
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>
+                    Appointed to a hybrid Educational Technology and UX
+                    Assistant role to develop skills in digital learning
+                    platforms, UX improvement, and data-driven content design.
+                  </li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* Fields Logo */}
+            <div className="flex-shrink-0">
+              <Image
                 src="/Fields.webp"
                 alt="Fields Logo"
                 width={64}
@@ -29,14 +62,13 @@ export default function Experience() {
                 className="rounded-md object-contain"
               />
             </div>
-
             {/* Card text content */}
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
                 <CardTitle>Workshop Facilitator</CardTitle>
                 <CardDescription>
                   The Fields Institute For Research In Mathematical Sciences |
-                  September 2024 – Present
+                  September 2024 – April 2025
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
