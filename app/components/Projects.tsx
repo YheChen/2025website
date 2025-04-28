@@ -96,6 +96,15 @@ const projects = [
     demo: "https://pokedex-yhechen.vercel.app/",
   },
   {
+    title: "Exam Countdown Timer",
+    description: "Exams and midterms are coming soooner than you think",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "ExamCountdown",
+    imgSrc: "/projects/ExamCountdownThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/ExamCountdown",
+    demo: "https://examcount-down.vercel.app/",
+  },
+  {
     title: "Grade Calculator",
     description: "Calculator for course grades that supports multiple courses",
     tech: ["Next.js", "TypeScript", "Tailwind"],

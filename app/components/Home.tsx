@@ -22,11 +22,11 @@ export default function Home() {
           Yanzhen Chen
         </h1>
         <h2 className="text-xl text-muted-foreground sm:text-2xl">
-          Mathematics, Statistics, Computer Science Student
+          Computer Science, Mathematics, Statistics Student
         </h2>
         <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
           University of Toronto student passionate about software development,
-          data science, and creating innovative solutions.
+          machine learning, and creating innovative solutions.
         </p>
       </div>
       <div className="flex flex-col gap-4 min-[400px]:flex-row">
