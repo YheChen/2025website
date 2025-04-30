@@ -22,6 +22,10 @@ const skills = {
     { label: "Pandas" },
     { label: "NumPy" },
     { label: "Matplotlib" },
+    { label: "Scikitlearn" },
+    // { label: "PyTorch" },
+    // { label: "TensorFlow" },
+    // { label: "Flask" },
   ],
   tools: [
     { label: "MongoDB" },
@@ -92,7 +96,7 @@ export default function Skills() {
         </h2>
         <SkillCategory title="Languages" items={skills.languages} />
         <SkillCategory
-          title="Frameworks and Libraries"
+          title="Frameworks & Libraries"
           items={skills.frameworks}
         />
         <SkillCategory title="Developer Tools" items={skills.tools} />
