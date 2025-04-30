@@ -44,11 +44,18 @@ export default function Education() {
               <CardContent className="p-0 pt-2">
                 <h4 className="font-medium mb-2">Relevant Coursework:</h4>
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
-                  <li>Software Tools and Systems Programming</li>
-                  <li>Software Design</li>
-                  <li>Theory of Computation</li>
-                  <li>Intro to Computer Science</li>
-                  <li>Intro to Statistical Reasoning and Data Science</li>
+                  <li>CSC311: Intro to Machine Learning</li>
+                  <li>CSC236: Intro to Theory of Computation</li>
+                  <li>
+                    CSC165: Mathematical Expression and Reasoning for Computer
+                    Science
+                  </li>
+                  <li>CSC209: Software Tools and Systems Programming</li>
+                  <li>CSC207: Software Design</li>
+                  <li>CSC148: Intro to Computer Science</li>
+                  <li>
+                    STA130: Intro to Statistical Reasoning and Data Science
+                  </li>
                 </ul>
               </CardContent>
             </div>
