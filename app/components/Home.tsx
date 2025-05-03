@@ -29,7 +29,7 @@ export default function Home() {
           machine learning, and creating innovative solutions.
         </p>
       </div>
-      <div className="flex flex-col gap-4 min-[400px]:flex-row">
+      <div className="mt-10 flex flex-col gap-4 min-[400px]:flex-row">
         <Link href="#contact">
           <Button>
             Contact Me
