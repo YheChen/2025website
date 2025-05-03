@@ -15,6 +15,16 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    title: "Indoor Outdoor Classifier",
+    description:
+      "A Flask web app that classifies indoor vs. outdoor images using a custom-trained CNN with interactive visualizations.",
+    tech: ["Pytorch", "Flask", "Matplotlib", "scikit-learn"],
+    imgAlt: "Indoor Outdoor Classifier",
+    imgSrc: "/projects/IndoorDetectorThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/IndoorDetector",
+    demo: "https://github.com/YheChen/IndoorDetector",
+  },
+  {
     title: "GuessUp",
     description: "Mobile charades game with custom prompts",
     tech: ["React Native", "TypeScript"],
