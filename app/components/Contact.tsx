@@ -124,10 +124,10 @@ export default function Contact() {
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-muted-foreground" />
                   <Link
-                    href="mailto:professional@yanzhenchen.ca"
+                    href="mailto:career@yanzhenchen.ca"
                     className="hover:underline"
                   >
-                    professional@yanzhenchen.ca
+                    career@yanzhenchen.ca
                   </Link>
                 </div>
                 <div className="flex items-center gap-3">
