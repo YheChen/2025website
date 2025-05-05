@@ -73,6 +73,7 @@ function SkillCategory({
                   width={32}
                   height={32}
                   className="object-contain"
+                  draggable="false"
                 />
               </div>
               <span className="text-sm text-center">{short || label}</span>

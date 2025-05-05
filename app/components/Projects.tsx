@@ -181,6 +181,7 @@ export default function Projects() {
                     width={350}
                     height={200}
                     className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
+                    draggable="false"
                   />
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">

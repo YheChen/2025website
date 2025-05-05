@@ -27,6 +27,7 @@ export default function Experience() {
                 width={64}
                 height={64}
                 className="rounded-md object-contain"
+                draggable="false"
               />
             </div>
             {/* Card text content */}
@@ -60,6 +61,7 @@ export default function Experience() {
                 width={64}
                 height={64}
                 className="rounded-md object-contain"
+                draggable="false"
               />
             </div>
             {/* Card text content */}

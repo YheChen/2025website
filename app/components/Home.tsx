@@ -17,6 +17,7 @@ export default function Home() {
           width={250}
           height={250}
           className="rounded-full border-4 border-muted"
+          draggable="false"
         />
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
           Yanzhen Chen

@@ -24,6 +24,7 @@ export default function Leadership() {
                 width={64}
                 height={64}
                 className="rounded-md object-contain"
+                draggable="false"
               />
             </div>
 
