@@ -1,5 +1,7 @@
 // components/Skills.tsx
+"use client";
 import Image from "next/image";
+import * as motion from "motion/react-client";
 
 const skills = {
   languages: [
@@ -46,7 +48,13 @@ function SkillCategory({
   items: { label: string; short?: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-4">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="flex flex-col gap-4"
+    >
       <h3 className="text-xl font-semibold text-center">{title}</h3>
       <div className="flex flex-wrap justify-center gap-5">
         {items.map(({ label, short }) => {
@@ -81,7 +89,7 @@ function SkillCategory({
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -91,7 +99,7 @@ export default function Skills() {
       id="skills"
       className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
     >
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-8">
         <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl text-center">
           Skills and Technologies
         </h2>

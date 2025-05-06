@@ -12,12 +12,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import * as motion from "motion/react-client";
 
 const projects = [
   {
     title: "Indoor Outdoor Classifier",
     description:
-      "A Flask web app that classifies indoor vs. outdoor images using a custom-trained CNN with interactive visualizations, achieving 85% validation accuracy.",
+      "Flask web app that classifies indoor and outdoor images using a custom-trained CNN with 85% validation accuracy.",
     tech: ["Pytorch", "Flask", "Matplotlib", "scikit-learn"],
     imgAlt: "Indoor Outdoor Classifier",
     imgSrc: "/projects/IndoorDetectorThumbnail.webp?height=200&width=350",
@@ -163,54 +164,68 @@ export default function Projects() {
       className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
     >
       <div className="flex flex-col gap-6">
-        <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl">
+        <motion.h2
+          className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           Projects
-        </h2>
+        </motion.h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="aspect-video overflow-hidden rounded-md group">
-                  <Image
-                    src={project.imgSrc}
-                    alt={project.imgAlt}
-                    width={350}
-                    height={200}
-                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
-                    draggable="false"
-                  />
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tech.map((tech, idx) => (
-                    <Badge key={idx}>{tech}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter>
-                <div className="flex gap-2">
-                  <a href={project.github} target="_blank" rel="noreferrer">
-                    <Button variant="outline" size="sm">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </Button>
-                  </a>
-                  <a
-                    href={ensureHttps(project.demo)}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Button variant="outline" size="sm">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </Button>
-                  </a>
-                </div>
-              </CardFooter>
-            </Card>
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+            >
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-video overflow-hidden rounded-md group">
+                    <Image
+                      src={project.imgSrc}
+                      alt={project.imgAlt}
+                      width={350}
+                      height={200}
+                      className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tech.map((tech, idx) => (
+                      <Badge key={idx}>{tech}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <div className="flex gap-2">
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <Button variant="outline" size="sm">
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                      </Button>
+                    </a>
+                    <a
+                      href={ensureHttps(project.demo)}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button variant="outline" size="sm">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Demo
+                      </Button>
+                    </a>
+                  </div>
+                </CardFooter>
+              </Card>
+            </motion.div>
           ))}
         </div>
         <div className="flex justify-center">
