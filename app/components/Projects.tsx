@@ -228,7 +228,13 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
-        <div className="flex justify-center">
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <Link
             href="https://github.com/YheChen"
             target="_blank"
@@ -239,7 +245,7 @@ export default function Projects() {
               <Github className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
