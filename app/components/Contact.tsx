@@ -10,10 +10,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import * as motion from "motion/react-client";
+import { useEffect, useRef } from "react";
+import { inView, animate } from "motion";
 import { FaDiscord } from "react-icons/fa";
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("xgvaqqzk");
+  const imageRef = useRef(null);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    if (!imageRef.current || !textRef.current) return;
+
+    inView(imageRef.current, (el) => {
+      animate(el, { opacity: 1, scale: [0.8, 1] }, { duration: 0.6 });
+      return () => animate(el, { opacity: 0, scale: 0.8 });
+    });
+
+    inView(textRef.current, (el) => {
+      animate(el, { opacity: 1, y: [20, 0] }, { duration: 0.6 });
+      return () => animate(el, { opacity: 0, y: 20 });
+    });
+  }, []);
 
   return (
     <section
@@ -21,10 +40,22 @@ export default function Contact() {
       className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
     >
       <div className="flex flex-col gap-6">
-        <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl">
+        <motion.h2
+          className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           Contact Me
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2">
+        </motion.h2>
+        <motion.div
+          className="grid gap-6 md:grid-cols-2"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <Card>
             <CardHeader>
               <CardTitle>Send a message</CardTitle>
@@ -171,7 +202,7 @@ export default function Contact() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

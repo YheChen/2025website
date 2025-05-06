@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import * as motion from "motion/react-client";
 
 export default function Experience() {
   return (
@@ -13,7 +14,13 @@ export default function Experience() {
       id="experience"
       className="mx-auto max-w-[980px] py-8 md:py-12 scroll-mt-16"
     >
-      <div className="flex flex-col gap-6">
+      <motion.div
+        className="flex flex-col gap-6"
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h2 className="text-2xl font-bold tracking-tighter md:text-3xl">
           Experience
         </h2>
@@ -91,7 +98,7 @@ export default function Experience() {
             </div>
           </div>
         </Card>
-      </div>
+      </motion.div>
     </section>
   );
 }
