@@ -25,9 +25,9 @@ const skills = {
     { label: "NumPy" },
     { label: "Matplotlib" },
     { label: "Scikitlearn" },
-    // { label: "PyTorch" },
+    { label: "PyTorch" },
     // { label: "TensorFlow" },
-    // { label: "Flask" },
+    { label: "Flask" },
   ],
   tools: [
     { label: "MongoDB" },
