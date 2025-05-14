@@ -13,8 +13,18 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import * as motion from "motion/react-client";
+import { Description } from "@radix-ui/react-toast";
 
 const projects = [
+  {
+    title: "Resume Book Web App",
+    description: "Work in progress",
+    tech: ["Next.js", "Typescript", "Tailwind", "Firebase"],
+    imgAlt: "",
+    imgSrc: "",
+    github: "https://github.com/YheChen/CSSU-Resume-Book",
+    demo: "https://github.com/YheChen/CSSU-Resume-Book",
+  },
   {
     title: "Indoor Outdoor Classifier",
     description:
