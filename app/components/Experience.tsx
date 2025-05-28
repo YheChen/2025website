@@ -26,7 +26,41 @@ export default function Experience() {
         </h2>
         <Card>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
-            {/* Fields Logo */}
+            {/* UTMIST Logo */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/UTMIST_logo.webp"
+                alt="UTMIST Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+                draggable="false"
+              />
+            </div>
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
+                <CardTitle>Full Stack Infrastructure Developer</CardTitle>
+                <CardDescription>
+                  University of Toronto Machine Intelligence Team | May 2025 –
+                  Present
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>
+                    Recently appointed to the Infrastructure team to contribute
+                    to developing the UTMIST website and to design user
+                    interfaces for the Computing Platform Team’s projects.
+                  </li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* Career center Logo */}
             <div className="flex-shrink-0">
               <Image
                 src="/EngCareerCentre.webp"

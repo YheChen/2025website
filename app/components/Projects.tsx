@@ -23,7 +23,7 @@ const projects = [
     imgAlt: "",
     imgSrc: "",
     github: "https://github.com/YheChen/CSSU-Resume-Book",
-    demo: "https://github.com/YheChen/CSSU-Resume-Book",
+    demo: "https://cssu-resume-book.vercel.app/",
   },
   {
     title: "Indoor Outdoor Classifier",
