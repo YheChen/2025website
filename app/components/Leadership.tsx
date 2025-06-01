@@ -68,7 +68,7 @@ export default function Leadership() {
             {/* UofTHacks Logo */}
             <div className="flex-shrink-0">
               <Image
-                src="/UoftHacks_logo.webp"
+                src="/UofTHacks_logo.webp"
                 alt="UofTHacks Logo"
                 width={64}
                 height={64}
