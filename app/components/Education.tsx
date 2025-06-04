@@ -43,7 +43,8 @@ export default function Education() {
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
                 <CardTitle>
-                  HBSc. Mathematics & Statistics Majors, CS Minor
+                  HBSc. Computer Science Major, Mathematics and Statistics
+                  Minors
                 </CardTitle>
                 <CardDescription>
                   University of Toronto — September 2023 - May 2027

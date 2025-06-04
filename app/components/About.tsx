@@ -27,10 +27,10 @@ export default function About() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-muted-foreground">
-                I'm a Mathematics and Statistics student at the University of
-                Toronto with a minor in Computer Science. I have a strong
-                foundation in programming principles and a passion for building
-                efficient, user-friendly applications.
+                I'm a Computer Science Major at the University of Toronto with
+                minors in Mathematics and Statistics. I have a strong foundation
+                in programming principles and a passion for building efficient,
+                user-friendly applications.
               </p>
             </motion.div>
             <motion.div
