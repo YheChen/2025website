@@ -63,36 +63,6 @@ export default function Leadership() {
             </div>
           </div>
         </Card>
-        <Card>
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
-            {/* UofTHacks Logo */}
-            <div className="flex-shrink-0">
-              <Image
-                src="/UofTHacks_logo.webp"
-                alt="UofTHacks Logo"
-                width={64}
-                height={64}
-                className="rounded-md object-contain"
-                draggable="false"
-              />
-            </div>
-
-            {/* Card text content */}
-            <div className="flex-grow">
-              <CardHeader className="p-0 pb-2">
-                <CardTitle>Sponsorship Executive</CardTitle>
-                <CardDescription>
-                  UofTHacks, University of Toronto | May 2025 – Present
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-0 pt-2">
-                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
-                  <li>Recently appointed</li>
-                </ul>
-              </CardContent>
-            </div>
-          </div>
-        </Card>
       </motion.div>
     </section>
   );
