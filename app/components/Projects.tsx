@@ -117,13 +117,13 @@ const projects = [
     demo: "https://pokedex-yhechen.vercel.app/",
   },
   {
-    title: "Exam Countdown Timer",
-    description: "Exams and midterms are coming soooner than you think",
+    title: "Todo List",
+    description: "Simple task management app",
     tech: ["Next.js", "TypeScript", "Tailwind"],
-    imgAlt: "ExamCountdown",
-    imgSrc: "/projects/ExamCountdownThumbnail.webp?height=200&width=350",
-    github: "https://github.com/YheChen/ExamCountdown",
-    demo: "https://examcount-down.vercel.app/",
+    imgAlt: "Todo List",
+    imgSrc: "/projects/TodoListThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/chentodo",
+    demo: "https://chentodo.vercel.app/",
   },
   {
     title: "Grade Calculator",
@@ -134,6 +134,25 @@ const projects = [
     github: "https://github.com/YheChen/GradeCalculator",
     demo: "https://multi-grade-calculator.vercel.app/",
   },
+  {
+    title: "Job Application Helper",
+    description: "Quick copy paste job application tool",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "Job Copy Paste Helper",
+    imgSrc: "/projects/JobAppThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/Job-Application-Copy-Paste",
+    demo: "https://job-application-copy-paste.vercel.app/",
+  },
+  {
+    title: "Exam Countdown Timer",
+    description: "Exams and midterms are coming soooner than you think",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    imgAlt: "ExamCountdown",
+    imgSrc: "/projects/ExamCountdownThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/ExamCountdown",
+    demo: "https://examcount-down.vercel.app/",
+  },
+
   {
     title: "Graphing Calculator",
     description: "Online graphing calculator",
@@ -151,15 +170,6 @@ const projects = [
     imgSrc: "/projects/GuessWhoThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/GuessWho",
     demo: "https://cssuguesswho.vercel.app",
-  },
-  {
-    title: "Todo List",
-    description: "Simple task management app",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    imgAlt: "Todo List",
-    imgSrc: "/projects/TodoListThumbnail.webp?height=200&width=350",
-    github: "https://github.com/YheChen/chentodo",
-    demo: "https://chentodo.vercel.app/",
   },
 ];
 
