@@ -16,6 +16,11 @@ export default function Portfolio() {
       <Head>
         <title>Yanzhen Chen | Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="be80316b-b3c0-4659-9eea-8f68076296f3"
+        ></script>
       </Head>
       <div className="min-h-screen bg-background text-base md:text-lg">
         <Header />
