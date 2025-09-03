@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import * as motion from "motion/react-client";
-import { Description } from "@radix-ui/react-toast";
 
 const projects = [
   {
@@ -33,7 +32,6 @@ const projects = [
     imgAlt: "Indoor Outdoor Classifier",
     imgSrc: "/projects/IndoorDetectorThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/IndoorDetector",
-    demo: "https://github.com/YheChen/IndoorDetector",
   },
   {
     title: "GuessUp",
@@ -42,7 +40,6 @@ const projects = [
     imgAlt: "GuessUp",
     imgSrc: "/projects/GuessUpThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/GuessUp",
-    demo: "https://github.com/YheChen/GuessUp",
   },
   {
     title: "TorontoGuessr",
@@ -78,7 +75,6 @@ const projects = [
     imgAlt: "Gyroscopic Authenticator",
     imgSrc: "/projects/TiltAuthThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/UofTHacks12",
-    demo: "https://github.com/YheChen/UofTHacks12",
   },
   {
     title: "Movie Review Platform",
@@ -87,7 +83,6 @@ const projects = [
     imgAlt: "Movie Review Platform",
     imgSrc: "/projects/IMDBRipOffThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/IMDBRipOff",
-    demo: "https://github.com/YheChen/IMDBRipOff",
   },
   {
     title: "Player Profile Analyzer",
@@ -105,7 +100,6 @@ const projects = [
     imgAlt: "Health Record Summarizer",
     imgSrc: "/projects/MedEasyThumbnail.webp?height=200&width=350",
     github: "https://github.com/gr125/treehacks24",
-    demo: "https://devpost.com/software/medeasy-zqmd9g",
   },
   {
     title: "Pokedex Web App",
@@ -232,16 +226,18 @@ export default function Projects() {
                         Code
                       </Button>
                     </a>
-                    <a
-                      href={ensureHttps(project.demo)}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Button variant="outline" size="sm">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Demo
-                      </Button>
-                    </a>
+                    {project.demo && (
+                      <a
+                        href={ensureHttps(project.demo)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Button variant="outline" size="sm">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Demo
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </CardFooter>
               </Card>
