@@ -40,7 +40,7 @@ export default function Experience() {
             {/* Card text content */}
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
-                <CardTitle>Full Stack Infrastructure Developer</CardTitle>
+                <CardTitle>Full Stack/Infrastructure Developer</CardTitle>
                 <CardDescription>
                   University of Toronto Machine Intelligence Team | May 2025 –
                   Present
@@ -49,9 +49,21 @@ export default function Experience() {
               <CardContent className="p-0 pt-2">
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
                   <li>
-                    Recently appointed to the Infrastructure team to contribute
-                    to developing the UTMIST website and to design user
-                    interfaces for the Computing Platform Team’s projects.
+                    Built responsive UI components using React and Tailwind,
+                    improving frontend usability and reducing bounce rate.
+                  </li>
+                  <li>
+                    Optimized backend APIs with caching and async handlers,
+                    reducing load time by 30% for 500+ monthly users.
+                  </li>
+                  <li>
+                    Used GitHub Actions to build CI/CD pipelines for automated
+                    testing, linting, and production deployment.
+                  </li>
+                  <li>
+                    Wrote and maintained internal documentation for both
+                    frontend components and backend API usage to ensure
+                    long-term maintainability and team onboarding.
                   </li>
                 </ul>
               </CardContent>
@@ -83,9 +95,25 @@ export default function Experience() {
               <CardContent className="p-0 pt-2">
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
                   <li>
-                    Appointed to a hybrid Educational Technology and UX
-                    Assistant role to develop skills in digital learning
-                    platforms, UX improvement, and data-driven content design.
+                    Developed digital learning platforms and UI/UX improvements
+                    for the PEY Co-op Hub, used by 5,000+ engineering PEY
+                    students, increasing content engagement by 25% through
+                    enhanced navigation and accessibility.
+                  </li>
+                  <li>
+                    Designed and implemented a structured process for Quercus
+                    shell creation, reducing setup time by 70% and identifying
+                    key inefficiencies in existing workflows.
+                  </li>
+                  <li>
+                    Established a reliable backup system for 10+ preparatory and
+                    co-op program shells, streamlining instructor workflows and
+                    reducing content recovery time by 90% despite automation
+                    limitations in Canvas.
+                  </li>
+                  <li>
+                    Earned an 8-month extension beyond the initial 4-month term
+                    in recognition of excellent performance.
                   </li>
                 </ul>
               </CardContent>
