@@ -60,18 +60,9 @@ export default function Education() {
                   <li>CSC263: Data Structures and Analysis</li>
                   <li>CSC258: Computer Organization</li>
                   <li>CSC311: Intro to Machine Learning</li>
-                  <li>CSC236: Intro to the Theory of Computation</li>
-                  <li>
-                    CSC165: Mathematical Expression and Reasoning for Computer
-                    Science
-                  </li>
                   <li>CSC209: Software Tools and Systems Programming</li>
                   <li>CSC207: Software Design</li>
-                  <li>CSC148: Intro to Computer Science</li>
                   <li>STA257: Probability and Statistics I</li>
-                  <li>
-                    STA130: Intro to Statistical Reasoning and Data Science
-                  </li>
                 </ul>
               </CardContent>
             </div>

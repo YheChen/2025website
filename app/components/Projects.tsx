@@ -16,13 +16,13 @@ import * as motion from "motion/react-client";
 
 const projects = [
   {
-    title: "Resume Book Web App",
-    description: "Work in progress",
-    tech: ["Next.js", "Typescript", "Tailwind", "Firebase"],
-    imgAlt: "",
-    imgSrc: "",
-    github: "https://github.com/YheChen/CSSU-Resume-Book",
-    demo: "https://cssu-resume-book.vercel.app/",
+    title: "TorontoGuessr",
+    description: "Test your knowledge of downtown Toronto",
+    tech: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
+    imgAlt: "TorontoGuessr",
+    imgSrc: "/projects/TorontoGuessrThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/TorontoGuessr",
+    demo: "https://torontoguessr.vercel.app/",
   },
   {
     title: "Indoor Outdoor Classifier",
@@ -40,15 +40,6 @@ const projects = [
     imgAlt: "GuessUp",
     imgSrc: "/projects/GuessUpThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/GuessUp",
-  },
-  {
-    title: "TorontoGuessr",
-    description: "Test your knowledge of downtown Toronto",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
-    imgAlt: "TorontoGuessr",
-    imgSrc: "/projects/TorontoGuessrThumbnail.webp?height=200&width=350",
-    github: "https://github.com/YheChen/TorontoGuessr",
-    demo: "https://torontoguessr.vercel.app/",
   },
   {
     title: "CSSU Website",
