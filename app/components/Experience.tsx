@@ -26,6 +26,50 @@ export default function Experience() {
         </h2>
         <Card>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* IQBank Logo */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/iqbank.webp"
+                alt="IQBank Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+                draggable="false"
+              />
+            </div>
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
+                <CardTitle>Frontend Developer</CardTitle>
+                <CardDescription>IQBank | Jan 2026 - Present</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>
+                    Developing and maintaining production-grade frontend
+                    features for an exam preparation platform under the
+                    supervision of Prof. Jack Sun, using React to support
+                    question banks, practice flows, and discussions.
+                  </li>
+                  <li>
+                    Implementing data-driven UI flows by integrating REST APIs
+                    for question delivery, submissions, discussions, and study
+                    analytics, with robust handling of asynchronous state,
+                    loading, and error conditions.
+                  </li>
+                  <li>
+                    Contributing to frontend architecture decisions including
+                    component abstraction, state management patterns, and
+                    reusable UI primitives, enabling rapid iteration while
+                    maintaining long-term code quality and scalability.
+                  </li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
             {/* Career center Logo */}
             <div className="flex-shrink-0">
               <Image

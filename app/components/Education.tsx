@@ -44,7 +44,7 @@ export default function Education() {
               <CardHeader className="p-0 pb-2">
                 <CardTitle>
                   HBSc. Computer Science Major, Mathematics and Statistics
-                  Minors
+                  Minors with Co-op
                 </CardTitle>
                 <CardDescription>
                   University of Toronto — September 2023 - May 2027
@@ -53,16 +53,22 @@ export default function Education() {
               <CardContent className="p-0 pt-2">
                 <h4 className="font-medium mb-2">Relevant Coursework:</h4>
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
-                  <li>CSC413: Neural Networks and Deep Learning</li>
+                  <li>CSC494: Computer Science Project: IQBank</li>
+                  <li>
+                    CSC490: Capstone Project: Machine Learning Engineering
+                  </li>
                   <li>CSC485: Computational Linguistics</li>
+                  <li>CSC413: Neural Networks and Deep Learning</li>
+                  <li>CSC384: Intro to Artificial Intelligence</li>
+                  <li>CSC373: Advanced Algorithms</li>
+                  <li>CSC369: Operating Systems</li>
                   <li>CSC343: Introduction to Databases</li>
+                  <li>CSC311: Intro to Machine Learning</li>
                   <li>CSC309: Programming on the Web</li>
                   <li>CSC263: Data Structures and Analysis</li>
                   <li>CSC258: Computer Organization</li>
-                  <li>CSC311: Intro to Machine Learning</li>
                   <li>CSC209: Software Tools and Systems Programming</li>
                   <li>CSC207: Software Design</li>
-                  <li>STA257: Probability and Statistics I</li>
                 </ul>
               </CardContent>
             </div>

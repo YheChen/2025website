@@ -25,6 +25,15 @@ const projects = [
     demo: "https://torontoguessr.vercel.app/",
   },
   {
+    title: "Train in a Snap",
+    description:
+      "Immersive AR safety training prototype with real-time voice guidance.",
+    tech: ["Python", "TypeScript", "Flask", "Snap3D", "Vapi Voice AI"],
+    imgAlt: "Train in a Snap",
+    imgSrc: "/projects/TrainInASnapThumbnail.webp?height=200&width=350",
+    github: "https://github.com/krishh-p/train-in-a-snap",
+  },
+  {
     title: "Indoor Outdoor Classifier",
     description:
       "Flask web app that classifies indoor and outdoor images using a custom-trained CNN with 85% validation accuracy.",
@@ -181,31 +190,33 @@ export default function Projects() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card key={index}>
+              <Card>
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="aspect-video overflow-hidden rounded-md group">
-                    <Image
-                      src={project.imgSrc}
-                      alt={project.imgAlt}
-                      width={350}
-                      height={200}
-                      className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
-                      draggable="false"
-                    />
-                  </div>
+                  {project.imgSrc ? (
+                    <div className="aspect-video overflow-hidden rounded-md group">
+                      <Image
+                        src={project.imgSrc}
+                        alt={project.imgAlt || project.title}
+                        width={350}
+                        height={200}
+                        className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
+                        draggable="false"
+                      />
+                    </div>
+                  ) : null}
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tech.map((tech, idx) => (
-                      <Badge key={idx}>{tech}</Badge>
+                    {project.tech.map((tech) => (
+                      <Badge key={`${project.title}-${tech}`}>{tech}</Badge>
                     ))}
                   </div>
                 </CardContent>
