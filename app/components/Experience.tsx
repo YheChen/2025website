@@ -40,8 +40,10 @@ export default function Experience() {
             {/* Card text content */}
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
-                <CardTitle>Frontend Developer</CardTitle>
-                <CardDescription>IQBank | Jan 2026 - Present</CardDescription>
+                <CardTitle>Software Engineer</CardTitle>
+                <CardDescription>
+                  IQBank | January 2026 - Present
+                </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
@@ -62,6 +64,39 @@ export default function Experience() {
                     component abstraction, state management patterns, and
                     reusable UI primitives, enabling rapid iteration while
                     maintaining long-term code quality and scalability.
+                  </li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* UofT Logo */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/uoftcslogo.webp"
+                alt="University of Toronto Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+                draggable="false"
+              />
+            </div>
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
+                <CardTitle>Teaching Assistant</CardTitle>
+                <CardDescription>
+                  University of Toronto, Department of Computer Science |
+                  January 2026 - Present
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>
+                    CSC165H1: Mathematical Expression and Reasoning for Computer
+                    Science - (Winter 2026)
                   </li>
                 </ul>
               </CardContent>
@@ -134,9 +169,10 @@ export default function Experience() {
             {/* Card text content */}
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
-                <CardTitle>Full Stack Developer</CardTitle>
+                <CardTitle>Software Engineer</CardTitle>
                 <CardDescription>
-                  University of Toronto Machine Intelligence Team | May 2025 - Present
+                  University of Toronto Machine Intelligence Team | May 2025 -
+                  Present
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
