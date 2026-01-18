@@ -69,6 +69,12 @@ export default function Education() {
                   <li>CSC258: Computer Organization</li>
                   <li>CSC209: Software Tools and Systems Programming</li>
                   <li>CSC207: Software Design</li>
+                  <li>
+                    CSC165: Mathematical Expression and Reasoning for Computer
+                    Science
+                  </li>
+                  <li>CSC148: Introduction to Computer Science</li>
+                  <li>CSC108: Introduction to Computer Programming</li>
                 </ul>
               </CardContent>
             </div>
