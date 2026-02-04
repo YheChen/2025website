@@ -28,7 +28,7 @@ export default function Education() {
         <Card>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
             {/* UofT Logo */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 rounded-md bg-white p-1">
               <Image
                 src="/uoftlogo.webp"
                 alt="University of Toronto Logo"

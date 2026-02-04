@@ -60,15 +60,6 @@ const projects = [
     demo: "https://www.cssu.ca",
   },
   {
-    title: "UofT Purity Test",
-    description: "Test your purity level as a UofT student",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    imgAlt: "UofTPurity",
-    imgSrc: "/projects/UoftPurityThumbnail.webp?height=200&width=350",
-    github: "https://github.com/YheChen/UofTPurity",
-    demo: "https://uoft-purity-test.vercel.app/",
-  },
-  {
     title: "Gyroscopic Authenticator",
     description: "Phone tilt-based authentication system",
     tech: ["Next.js", "React Native", "Firebase"],

@@ -71,10 +71,10 @@ function SkillCategory({
           const logoSrc = `/skills/${fileName}.webp`;
           return (
             <div
-              className="flex flex-col items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-xl px-4 py-2 w-20 hover:scale-125 transition-transform duration-300 ease-in-out"
+              className="flex flex-col items-center gap-2 bg-muted/70 dark:bg-card rounded-xl px-4 py-2 w-20 hover:scale-125 transition-transform duration-300 ease-in-out"
               key={label}
             >
-              <div className="bg-white rounded-full p-4 w-16 h-16 flex items-center justify-center">
+              <div className="bg-background rounded-full p-4 w-16 h-16 flex items-center justify-center">
                 <Image
                   src={logoSrc}
                   alt={label}
