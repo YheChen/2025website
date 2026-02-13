@@ -130,7 +130,7 @@ const projects = [
   },
   {
     title: "Exam Countdown Timer",
-    description: "Exams and midterms are coming soooner than you think",
+    description: "Live countdown for upcoming tests",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     imgAlt: "ExamCountdown",
     imgSrc: "/projects/ExamCountdownThumbnail.webp?height=200&width=350",
