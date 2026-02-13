@@ -129,7 +129,7 @@ const projects = [
     demo: "https://job-application-copy-paste.vercel.app/",
   },
   {
-    title: "Exam Countdown Timer",
+    title: "Exam Timer",
     description: "Live countdown for upcoming tests",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     imgAlt: "ExamCountdown",
