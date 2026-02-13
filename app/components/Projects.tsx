@@ -182,17 +182,18 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
+              className="h-full"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card>
+              <Card className="flex h-full flex-col">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   {project.imgSrc ? (
                     <div className="aspect-video overflow-hidden rounded-md group">
                       <Image
