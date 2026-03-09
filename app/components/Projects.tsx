@@ -25,6 +25,15 @@ const projects = [
     demo: "https://torontoguessr.vercel.app/",
   },
   {
+    title: "LeetCord",
+    description:
+      "Discord bot for LeetCode communities with linking, daily tracking, streaks, and leaderboards.",
+    tech: ["TypeScript", "Discord.js", "Prisma", "PostgreSQL"],
+    imgAlt: "LeetCord",
+    imgSrc: "/projects/LeetCordThumbnail.webp?height=200&width=350",
+    github: "https://github.com/YheChen/LeetCord",
+  },
+  {
     title: "Train in a Snap",
     description:
       "Immersive AR safety training prototype with real-time voice guidance.",
