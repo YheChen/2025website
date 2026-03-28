@@ -167,6 +167,13 @@ const projects = [
   },
 ];
 
+const hiddenProjectTitles = new Set([
+  "Health Record Summarizer",
+  "Job Application Helper",
+  "Graphing Calculator",
+  "Exam Timer",
+]);
+
 function ensureHttps(url: string) {
   return url.startsWith("http") ? url : `https://${url}`;
 }
@@ -188,64 +195,66 @@ export default function Projects() {
           Projects
         </motion.h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              className="h-full"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-            >
-              <Card className="flex h-full flex-col">
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  {project.imgSrc ? (
-                    <div className="aspect-video overflow-hidden rounded-md group">
-                      <Image
-                        src={project.imgSrc}
-                        alt={project.imgAlt || project.title}
-                        width={350}
-                        height={200}
-                        className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
-                        draggable="false"
-                      />
+          {projects
+            .filter((project) => !hiddenProjectTitles.has(project.title))
+            .map((project, index) => (
+              <motion.div
+                key={project.title}
+                className="h-full"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                <Card className="flex h-full flex-col">
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    {project.imgSrc ? (
+                      <div className="aspect-video overflow-hidden rounded-md group">
+                        <Image
+                          src={project.imgSrc}
+                          alt={project.imgAlt || project.title}
+                          width={350}
+                          height={200}
+                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:translate-y-1"
+                          draggable="false"
+                        />
+                      </div>
+                    ) : null}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <Badge key={`${project.title}-${tech}`}>{tech}</Badge>
+                      ))}
                     </div>
-                  ) : null}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge key={`${project.title}-${tech}`}>{tech}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <div className="flex gap-2">
-                    <a href={project.github} target="_blank" rel="noreferrer">
-                      <Button variant="outline" size="sm">
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </Button>
-                    </a>
-                    {project.demo && (
-                      <a
-                        href={ensureHttps(project.demo)}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                  </CardContent>
+                  <CardFooter>
+                    <div className="flex gap-2">
+                      <a href={project.github} target="_blank" rel="noreferrer">
                         <Button variant="outline" size="sm">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Demo
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
                         </Button>
                       </a>
-                    )}
-                  </div>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+                      {project.demo && (
+                        <a
+                          href={ensureHttps(project.demo)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Button variant="outline" size="sm">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Demo
+                          </Button>
+                        </a>
+                      )}
+                    </div>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
         </div>
         <motion.div
           className="flex justify-center"

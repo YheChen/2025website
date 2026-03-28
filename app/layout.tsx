@@ -22,7 +22,12 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          storageKey="portfolio-theme"
+        >
           {children}
         </ThemeProvider>
       </body>
