@@ -26,6 +26,47 @@ export default function Experience() {
         </h2>
         <Card>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* Bree Logo */}
+            <div className="flex-shrink-0 rounded-md bg-white p-1">
+              <Image
+                src="/Bree.webp"
+                alt="Bree Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+                draggable="false"
+              />
+            </div>
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
+                <CardTitle>Software Developer Co-op</CardTitle>
+                <CardDescription>
+                  Bree (YC S21) | Incoming May 2026
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>
+                    Incoming Software Developer Co-op at Bree, a profitable
+                    Canadian fintech serving 600,000+ users.
+                  </li>
+                  <li>
+                    Will build and ship full-stack features across a
+                    TypeScript/Node serverless stack and React Native
+                    applications.
+                  </li>
+                  <li>
+                    Selected through technical, product, and founder
+                    interviews.
+                  </li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
             {/* IQBank Logo */}
             <div className="flex-shrink-0 rounded-md bg-white p-1">
               <Image
@@ -122,7 +163,7 @@ export default function Experience() {
                 <CardTitle>Educational Technology & UX Developer</CardTitle>
                 <CardDescription>
                   University of Toronto, Faculty of Applied Science, Engineering
-                  Career Centre | May 2025 - Present
+                  Career Centre | May 2025 - March 2026
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
@@ -147,52 +188,6 @@ export default function Experience() {
                   <li>
                     Earned an 8-month extension beyond the initial 4-month term
                     in recognition of excellent performance.
-                  </li>
-                </ul>
-              </CardContent>
-            </div>
-          </div>
-        </Card>
-        <Card>
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
-            {/* UTMIST Logo */}
-            <div className="flex-shrink-0">
-              <Image
-                src="/UTMIST_logo.webp"
-                alt="UTMIST Logo"
-                width={64}
-                height={64}
-                className="rounded-md object-contain"
-                draggable="false"
-              />
-            </div>
-            {/* Card text content */}
-            <div className="flex-grow">
-              <CardHeader className="p-0 pb-2">
-                <CardTitle>Software Engineer</CardTitle>
-                <CardDescription>
-                  University of Toronto Machine Intelligence Team | May 2025 -
-                  Present
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-0 pt-2">
-                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
-                  <li>
-                    Built responsive UI components using React and Tailwind,
-                    improving frontend usability and reducing bounce rate.
-                  </li>
-                  <li>
-                    Optimized backend APIs with caching and async handlers,
-                    reducing load time by 30% for 500+ monthly users.
-                  </li>
-                  <li>
-                    Used GitHub Actions to build CI/CD pipelines for automated
-                    testing, linting, and production deployment.
-                  </li>
-                  <li>
-                    Wrote and maintained internal documentation for both
-                    frontend components and backend API usage to ensure
-                    long-term maintainability and team onboarding.
                   </li>
                 </ul>
               </CardContent>

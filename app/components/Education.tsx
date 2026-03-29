@@ -47,16 +47,13 @@ export default function Education() {
                   Minors with Co-op
                 </CardTitle>
                 <CardDescription>
-                  University of Toronto — September 2023 - May 2027
+                  University of Toronto — September 2023 - April 2027
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
                 <h4 className="font-medium mb-2">Relevant Coursework:</h4>
                 <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
                   <li>CSC494: Computer Science Project: IQBank</li>
-                  <li>
-                    CSC490: Capstone Project: Machine Learning Engineering
-                  </li>
                   <li>CSC485: Computational Linguistics</li>
                   <li>CSC413: Neural Networks and Deep Learning</li>
                   <li>CSC384: Intro to Artificial Intelligence</li>

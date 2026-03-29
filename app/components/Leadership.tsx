@@ -40,7 +40,8 @@ export default function Leadership() {
               <CardHeader className="p-0 pb-2">
                 <CardTitle>Vice President of External Relations</CardTitle>
                 <CardDescription>
-                  Computer Science Student Union, Toronto, ON | May 2024 - Present
+                  Computer Science Student Union, Toronto, ON | May 2024 - April
+                  2026
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 pt-2">
@@ -59,6 +60,52 @@ export default function Leadership() {
                     Hosted 2 annual career fairs with cumulative attendance of
                     over 1000 students, connecting them with employers for
                     recruitment opportunities.
+                  </li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* UTMIST Logo */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/UTMIST_logo.webp"
+                alt="UTMIST Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+                draggable="false"
+              />
+            </div>
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
+                <CardTitle>Software Engineer</CardTitle>
+                <CardDescription>
+                  University of Toronto Machine Intelligence Team | May 2025 -
+                  Present
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>
+                    Built responsive UI components using React and Tailwind,
+                    improving frontend usability and reducing bounce rate.
+                  </li>
+                  <li>
+                    Optimized backend APIs with caching and async handlers,
+                    reducing load time by 30% for 500+ monthly users.
+                  </li>
+                  <li>
+                    Used GitHub Actions to build CI/CD pipelines for automated
+                    testing, linting, and production deployment.
+                  </li>
+                  <li>
+                    Wrote and maintained internal documentation for both
+                    frontend components and backend API usage to ensure
+                    long-term maintainability and team onboarding.
                   </li>
                 </ul>
               </CardContent>
