@@ -38,6 +38,37 @@ export default function Leadership() {
             {/* Card text content */}
             <div className="flex-grow">
               <CardHeader className="p-0 pb-2">
+                <CardTitle>President</CardTitle>
+                <CardDescription>
+                  Computer Science Student Union, Toronto, ON | May 2026 -
+                  Present
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-0 pt-2">
+                <ul className="text-sm text-muted-foreground list-disc pl-4 space-y-1">
+                  <li>Incoming President.</li>
+                </ul>
+              </CardContent>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-4">
+            {/* CSSU Logo */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/CSSULOGO.webp"
+                alt="CSSU Logo"
+                width={64}
+                height={64}
+                className="rounded-md object-contain"
+                draggable="false"
+              />
+            </div>
+
+            {/* Card text content */}
+            <div className="flex-grow">
+              <CardHeader className="p-0 pb-2">
                 <CardTitle>Vice President of External Relations</CardTitle>
                 <CardDescription>
                   Computer Science Student Union, Toronto, ON | May 2024 - April
