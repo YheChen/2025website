@@ -22,7 +22,7 @@ const projects = [
     imgAlt: "TorontoGuessr",
     imgSrc: "/projects/TorontoGuessrThumbnail.webp?height=200&width=350",
     github: "https://github.com/YheChen/TorontoGuessr",
-    demo: "https://torontoguessr.vercel.app/",
+    demo: "https://torontoguessr.ca/",
   },
   {
     title: "LeetCord",
