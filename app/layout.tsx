@@ -20,6 +20,7 @@ export default function RootLayout({
           src="https://cloud.umami.is/script.js"
           data-website-id="be80316b-b3c0-4659-9eea-8f68076296f3"
         ></script>
+        <script defer src="https://webring.ca/embed.js"></script>
       </head>
       <body>
         <ThemeProvider
