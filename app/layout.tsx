@@ -61,6 +61,10 @@ export default function RootLayout({
           data-website-id="be80316b-b3c0-4659-9eea-8f68076296f3"
         ></script>
         <script defer src="https://webring.ca/embed.js"></script>
+        <noscript>
+          {/* Ensure scroll-reveal content is visible without JavaScript */}
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="min-h-screen font-sans">
         <ThemeProvider

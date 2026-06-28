@@ -1,42 +1,14 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ArrowRight, FileText, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import AsciiArt from "./AsciiArt";
-
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-  },
-};
+import Reveal from "./Reveal";
 
 const facts = ["Computer Science", "Mathematics", "Statistics"];
 
 export default function Home() {
-  const prefersReduced = useReducedMotion();
-  const motionProps = prefersReduced
-    ? {}
-    : {
-        variants: container,
-        initial: "hidden" as const,
-        animate: "show" as const,
-      };
-  const itemVariant = prefersReduced ? undefined : item;
-
   return (
     <section id="home" className="relative isolate overflow-hidden scroll-mt-24">
       {/* Decorative background */}
@@ -47,9 +19,9 @@ export default function Home() {
       </div>
 
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-5 py-24 text-center sm:px-6 md:py-32 lg:py-36">
-        <motion.div className="flex flex-col items-center gap-6" {...motionProps}>
+        <div className="flex flex-col items-center gap-6">
           {/* Avatar */}
-          <motion.div variants={itemVariant} className="relative">
+          <Reveal delay={0} className="relative">
             <div className="absolute -inset-3 rounded-full glow-brand opacity-50 blur-xl" />
             <div className="relative rounded-full bg-gradient-to-br from-brand/60 via-border to-transparent p-[2px] shadow-soft-lg">
               <Image
@@ -62,10 +34,10 @@ export default function Home() {
                 draggable={false}
               />
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Status pill */}
-          <motion.div variants={itemVariant}>
+          <Reveal delay={0.08}>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
@@ -73,37 +45,31 @@ export default function Home() {
               </span>
               Open to internship opportunities
             </span>
-          </motion.div>
+          </Reveal>
 
           {/* Heading */}
-          <motion.h1
-            variants={itemVariant}
-            className="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
-          >
-            <span className="text-gradient">Yanzhen Chen</span>
-          </motion.h1>
+          <Reveal delay={0.16}>
+            <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+              <span className="text-gradient">Yanzhen Chen</span>
+            </h1>
+          </Reveal>
 
-          <motion.p
-            variants={itemVariant}
-            className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground sm:text-base"
-          >
-            Computer Science · Mathematics · Statistics @ UofT
-          </motion.p>
+          <Reveal delay={0.22}>
+            <p className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground sm:text-base">
+              Computer Science · Mathematics · Statistics @ UofT
+            </p>
+          </Reveal>
 
-          <motion.p
-            variants={itemVariant}
-            className="max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
-          >
-            University of Toronto student passionate about software development,
-            machine learning, and creating innovative solutions that solve
-            real-world problems.
-          </motion.p>
+          <Reveal delay={0.28}>
+            <p className="max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              University of Toronto student passionate about software
+              development, machine learning, and creating innovative solutions
+              that solve real-world problems.
+            </p>
+          </Reveal>
 
           {/* CTAs */}
-          <motion.div
-            variants={itemVariant}
-            className="mt-2 flex flex-col gap-3 sm:flex-row"
-          >
+          <Reveal delay={0.36} className="mt-2 flex flex-col gap-3 sm:flex-row">
             <Button variant="brand" size="lg" asChild>
               <Link href="#contact">
                 Contact me
@@ -119,11 +85,11 @@ export default function Home() {
                 Resume
               </a>
             </Button>
-          </motion.div>
+          </Reveal>
 
           {/* Meta row */}
-          <motion.div
-            variants={itemVariant}
+          <Reveal
+            delay={0.44}
             className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-xs text-muted-foreground"
           >
             <span className="inline-flex items-center gap-1.5">
@@ -138,8 +104,8 @@ export default function Home() {
                 {fact}
               </span>
             ))}
-          </motion.div>
-        </motion.div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
