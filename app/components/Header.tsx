@@ -1,193 +1,223 @@
 "use client";
+
 import Link from "next/link";
-import { Github, Linkedin, FileText } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  Home,
+  Github,
+  Linkedin,
+  FileText,
+  User,
   FolderKanban,
-  BookOpen,
+  Code2,
   GraduationCap,
   Briefcase,
   Mail,
+  Menu,
+  X,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useActiveSection } from "@/hooks/use-active-section";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { id: "about", label: "About", icon: User },
+  { id: "projects", label: "Projects", icon: FolderKanban },
+  { id: "skills", label: "Skills", icon: Code2 },
+  { id: "education", label: "Education", icon: GraduationCap },
+  { id: "experience", label: "Experience", icon: Briefcase },
+  { id: "contact", label: "Contact", icon: Mail },
+] as const;
+
+const socials = [
+  { href: "https://github.com/YheChen", label: "GitHub", icon: Github },
+  {
+    href: "https://linkedin.com/in/yanzhenchen",
+    label: "LinkedIn",
+    icon: Linkedin,
+  },
+] as const;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const items = [
-    { id: "about", icon: <Home className="w-5 h-5" /> },
-    { id: "projects", icon: <FolderKanban className="w-5 h-5" /> },
-    { id: "skills", icon: <BookOpen className="w-5 h-5" /> },
-    { id: "education", icon: <GraduationCap className="w-5 h-5" /> },
-    { id: "experience", icon: <Briefcase className="w-5 h-5" /> },
-    { id: "contact", icon: <Mail className="w-5 h-5" /> },
-  ];
+  const activeSection = useActiveSection(navItems.map((item) => item.id));
 
   return (
     <>
-      {/* Top Navbar */}
-      <header
-        className={`sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-transform duration-300 ${
-          isMenuOpen ? "-translate-y-full" : "translate-y-0"
-        }`}
-      >
-        <div className="flex justify-between items-center h-20 px-2 md:px-4 text-lg w-full max-w-7xl mx-auto">
-          <div className="mr-4 hidden md:flex items-center space-x-6">
-            <Link href="/" className="flex items-center">
-              <span className="font-bold">Yanzhen Chen</span>
+      <header className="sticky top-0 z-40 w-full border-b border-border/70 bg-background/70 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8">
+          {/* Brand + desktop nav */}
+          <div className="flex items-center gap-8">
+            <Link
+              href="/"
+              className="flex items-center"
+              aria-label="Yanzhen Chen — home"
+            >
+              <span className="text-[0.95rem] font-semibold tracking-tight">
+                Yanzhen Chen
+              </span>
             </Link>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
-              {items.map(({ id }) => (
-                <Link
-                  key={id}
-                  href={`/#${id}`}
-                  className="transition-colors hover:text-foreground/80"
-                >
-                  {id.charAt(0).toUpperCase() + id.slice(1)}
-                </Link>
-              ))}
+
+            <nav className="hidden items-center gap-1 md:flex">
+              {navItems.map(({ id, label }) => {
+                const isActive = activeSection === id;
+                return (
+                  <Link
+                    key={id}
+                    href={`#${id}`}
+                    className={cn(
+                      "relative isolate rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors",
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="navPill"
+                        className="absolute inset-0 -z-10 rounded-full bg-accent"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 32,
+                        }}
+                      />
+                    )}
+                    {label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
 
-          {/* Mobile */}
-          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-            <div className="w-full flex-1 md:w-auto md:flex-none">
-              <nav className="flex items-center justify-between md:hidden w-full">
-                {/* Hamburger Menu on the left */}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsMenuOpen(true)}
-                >
-                  <span className="sr-only">Open menu</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-6 w-6"
+          {/* Actions */}
+          <div className="flex items-center gap-1">
+            <div className="hidden items-center gap-1 sm:flex">
+              {socials.map(({ href, label, icon: Icon }) => (
+                <Button key={label} variant="ghost" size="icon" asChild>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
                   >
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
-                  </svg>
+                    <Icon className="h-5 w-5" />
+                  </a>
                 </Button>
-
-                {/* Name */}
-                <Link href="/" className="flex items-center space-x-2">
-                  <span className="font-bold whitespace-nowrap text-[0.95rem] md:text-lg">
-                    Yanzhen Chen
-                  </span>
-                </Link>
-              </nav>
+              ))}
             </div>
+            <Button
+              variant="brand"
+              size="sm"
+              className="hidden sm:inline-flex"
+              asChild
+            >
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                <FileText className="h-4 w-4" />
+                Resume
+              </a>
+            </Button>
 
-            {/* Icons */}
-            <div className="flex items-center gap-2">
-              <Link
-                href="https://github.com/YheChen"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button variant="ghost" size="icon">
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </Button>
-              </Link>
-              <Link
-                href="https://linkedin.com/in/yanzhenchen"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button variant="ghost" size="icon">
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
-              </Link>
-              <Link href="/resume.pdf" target="_blank" rel="noreferrer">
-                <Button variant="ghost" className="flex items-center gap-2">
-                  <FileText className="h-5 w-5" />
-                  <span>Resume</span>
-                </Button>
-              </Link>
-            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {isMenuOpen && (
-          <>
-            {/* Backdrop (click to close) */}
+          <div className="md:hidden">
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-black"
+              className="fixed inset-0 z-50 bg-background/60 backdrop-blur-sm"
               onClick={() => setIsMenuOpen(false)}
             />
-
-            {/* Sidebar */}
-            <motion.div
-              key="sidebar"
+            <motion.aside
+              key="drawer"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 w-64 h-full bg-background z-50 shadow-lg p-6 flex flex-col justify-between"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the sidebar
+              transition={{
+                type: "tween",
+                duration: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="fixed inset-y-0 left-0 z-50 flex w-[18rem] max-w-[82vw] flex-col border-r border-border bg-card p-6 shadow-soft-lg"
             >
-              <div className="flex flex-col gap-6 relative">
-                <button
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-0 right-0 text-muted-foreground p-1"
+                  className="flex items-center"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-
-                <div className="pt-8 flex flex-col gap-4">
-                  {items.map(({ id, icon }) => (
-                    <Link
-                      key={id}
-                      href={`/#${id}`}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="w-full flex items-center gap-3 px-4 py-2 text-lg font-semibold rounded-md hover:bg-muted hover:text-foreground transition-colors"
-                    >
-                      {icon}
-                      {id.charAt(0).toUpperCase() + id.slice(1)}
-                    </Link>
-                  ))}
-                </div>
+                  <span className="font-semibold tracking-tight">
+                    Yanzhen Chen
+                  </span>
+                </Link>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" />
+                </Button>
               </div>
 
-              <div className="px-4">
-                <p className="text-sm text-muted-foreground">
+              <nav className="mt-8 flex flex-col gap-1">
+                {navItems.map(({ id, label, icon: Icon }) => (
+                  <Link
+                    key={id}
+                    href={`#${id}`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    <Icon className="h-5 w-5 text-brand" />
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="mt-auto flex flex-col gap-4 pt-6">
+                <Button variant="brand" className="w-full" asChild>
+                  <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                    <FileText className="h-4 w-4" />
+                    Resume
+                  </a>
+                </Button>
+                <div className="flex items-center gap-1">
+                  {socials.map(({ href, label, icon: Icon }) => (
+                    <Button key={label} variant="ghost" size="icon" asChild>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={label}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    </Button>
+                  ))}
+                </div>
+                <p className="text-xs text-muted-foreground">
                   © {new Date().getFullYear()} Yanzhen Chen
                 </p>
               </div>
-            </motion.div>
-          </>
+            </motion.aside>
+          </div>
         )}
       </AnimatePresence>
     </>

@@ -2,43 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 @layer base {
   :root {
+    /* Neutral surfaces */
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 220 20% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 220 20% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --popover-foreground: 220 20% 9%;
+
+    /* Primary = near-black for strong type / solid buttons */
+    --primary: 220 20% 11%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+
+    --secondary: 220 16% 96%;
+    --secondary-foreground: 220 20% 14%;
+    --muted: 220 16% 96.5%;
+    --muted-foreground: 220 9% 42%;
+    --accent: 220 16% 95.5%;
+    --accent-foreground: 220 20% 14%;
+
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    --border: 220 14% 91%;
+    --input: 220 14% 89%;
+    --ring: 243 75% 59%;
+
+    /* Brand accent (indigo) — used sparingly for emphasis */
+    --brand: 243 75% 59%;
+    --brand-foreground: 0 0% 100%;
+    --brand-muted: 243 80% 96%;
+    --brand-strong: 245 58% 51%;
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+
+    --radius: 0.85rem;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -48,39 +53,51 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
-    --background: 220 14% 12%;
-    --foreground: 220 15% 96%;
-    --card: 220 14% 16%;
-    --card-foreground: 220 15% 96%;
-    --popover: 220 14% 16%;
-    --popover-foreground: 220 15% 96%;
-    --primary: 220 12% 92%;
-    --primary-foreground: 220 20% 12%;
-    --secondary: 220 12% 22%;
-    --secondary-foreground: 220 15% 96%;
-    --muted: 220 12% 20%;
-    --muted-foreground: 220 10% 70%;
-    --accent: 220 12% 24%;
-    --accent-foreground: 220 15% 96%;
-    --destructive: 0 62.8% 35%;
+    --background: 224 24% 6%;
+    --foreground: 220 16% 96%;
+    --card: 224 20% 9%;
+    --card-foreground: 220 16% 96%;
+    --popover: 224 22% 8%;
+    --popover-foreground: 220 16% 96%;
+
+    --primary: 220 14% 96%;
+    --primary-foreground: 224 24% 8%;
+
+    --secondary: 222 16% 16%;
+    --secondary-foreground: 220 16% 96%;
+    --muted: 222 16% 15%;
+    --muted-foreground: 220 11% 64%;
+    --accent: 222 16% 18%;
+    --accent-foreground: 220 16% 96%;
+
+    --destructive: 0 62% 47%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 12% 26%;
-    --input: 220 12% 26%;
-    --ring: 220 70% 60%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 20%;
+    --ring: 245 90% 72%;
+
+    --brand: 245 90% 72%;
+    --brand-foreground: 224 30% 8%;
+    --brand-muted: 244 40% 18%;
+    --brand-strong: 245 90% 76%;
+
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 220 14% 10%;
+
+    --sidebar-background: 224 24% 7%;
     --sidebar-foreground: 220 15% 92%;
-    --sidebar-primary: 220 70% 60%;
-    --sidebar-primary-foreground: 220 20% 12%;
-    --sidebar-accent: 220 12% 18%;
+    --sidebar-primary: 245 90% 72%;
+    --sidebar-primary-foreground: 224 24% 8%;
+    --sidebar-accent: 222 16% 16%;
     --sidebar-accent-foreground: 220 15% 92%;
-    --sidebar-border: 220 12% 22%;
-    --sidebar-ring: 220 70% 60%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 245 90% 72%;
   }
 }
 
@@ -88,11 +105,135 @@ body {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: normal;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings get balanced wrapping */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: hsl(var(--brand) / 0.22);
+    color: hsl(var(--foreground));
+  }
+
+  /* Refined, unobtrusive scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Honor reduced-motion globally as a safety net */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Eyebrow / section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  /* Subtle dotted grid background */
+  .bg-grid {
+    background-image: radial-gradient(
+      hsl(var(--foreground) / 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Faint line grid */
+  .bg-lines {
+    background-image: linear-gradient(
+        to right,
+        hsl(var(--border) / 0.5) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Radial mask helpers to fade decorative backgrounds toward edges */
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      black 0%,
+      transparent 72%
+    );
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 72%);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+
+  /* Brand gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      120deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--foreground)) 45%,
+      hsl(var(--brand)) 100%
+    );
+  }
+
+  /* Layered surface used for premium cards */
+  .surface {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Soft ambient glow */
+  .glow-brand {
+    background: radial-gradient(
+      closest-side,
+      hsl(var(--brand) / 0.35),
+      transparent 100%
+    );
+  }
 }

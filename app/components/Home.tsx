@@ -1,82 +1,146 @@
-// components/Home.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { ArrowRight, FileText, MapPin } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
-import { inView, animate } from "motion"; // <-- core utilities
-import * as motion from "motion/react-client"; // <-- React component wrapper
-import { useEffect, useRef } from "react";
+import AsciiArt from "./AsciiArt";
+
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const facts = ["Computer Science", "Mathematics", "Statistics"];
 
 export default function Home() {
-  const imageRef = useRef(null);
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    if (!imageRef.current || !textRef.current) return;
-
-    inView(imageRef.current, (el) => {
-      animate(el, { opacity: 1, scale: [0.8, 1] }, { duration: 0.6 });
-      return () => animate(el, { opacity: 0, scale: 0.8 });
-    });
-
-    inView(textRef.current, (el) => {
-      animate(el, { opacity: 1, y: [20, 0] }, { duration: 0.6 });
-      return () => animate(el, { opacity: 0, y: 20 });
-    });
-  }, []);
+  const prefersReduced = useReducedMotion();
+  const motionProps = prefersReduced
+    ? {}
+    : {
+        variants: container,
+        initial: "hidden" as const,
+        animate: "show" as const,
+      };
+  const itemVariant = prefersReduced ? undefined : item;
 
   return (
-    <section
-      id="home"
-      className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"
-    >
-      <div className="flex flex-col items-center gap-4 text-center">
-        <div ref={imageRef} style={{ opacity: 0 }}>
-          <Image
-            src="/YanzhenSquare.webp?height=250&width=250"
-            alt="Yanzhen Chen"
-            width={250}
-            height={250}
-            className="rounded-full border-4 border-muted"
-            draggable="false"
-          />
-        </div>
-
-        <div ref={textRef} style={{ opacity: 0 }}>
-          <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
-            Yanzhen Chen
-          </h1>
-          <h2 className="text-xl text-muted-foreground sm:text-2xl">
-            Computer Science, Mathematics, Statistics Student
-          </h2>
-          <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-            University of Toronto student passionate about software development,
-            machine learning, and creating innovative solutions.
-          </p>
-        </div>
+    <section id="home" className="relative isolate overflow-hidden scroll-mt-24">
+      {/* Decorative background */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-grid mask-fade-b opacity-70" />
+        <div className="absolute left-1/2 top-[-12%] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full glow-brand opacity-60 blur-2xl" />
+        <AsciiArt className="absolute right-4 top-24 hidden text-[0.7rem] leading-[0.9] text-foreground/[0.05] sm:block lg:right-16 lg:text-base" />
       </div>
-      <motion.div
-        className="mt-10 flex flex-col gap-4 min-[400px]:flex-row"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <Link href="#contact">
-          <Button>
-            Contact Me
-            <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
-        </Link>
-        <Link href="#projects">
-          <Button variant="outline">
-            View Projects
-            <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
-        </Link>
-      </motion.div>
+
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-5 py-24 text-center sm:px-6 md:py-32 lg:py-36">
+        <motion.div className="flex flex-col items-center gap-6" {...motionProps}>
+          {/* Avatar */}
+          <motion.div variants={itemVariant} className="relative">
+            <div className="absolute -inset-3 rounded-full glow-brand opacity-50 blur-xl" />
+            <div className="relative rounded-full bg-gradient-to-br from-brand/60 via-border to-transparent p-[2px] shadow-soft-lg">
+              <Image
+                src="/YanzhenSquare.webp"
+                alt="Yanzhen Chen"
+                width={144}
+                height={144}
+                priority
+                className="h-32 w-32 rounded-full border-4 border-background object-cover sm:h-36 sm:w-36"
+                draggable={false}
+              />
+            </div>
+          </motion.div>
+
+          {/* Status pill */}
+          <motion.div variants={itemVariant}>
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Open to internship opportunities
+            </span>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h1
+            variants={itemVariant}
+            className="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+          >
+            <span className="text-gradient">Yanzhen Chen</span>
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariant}
+            className="font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground sm:text-base"
+          >
+            Computer Science · Mathematics · Statistics @ UofT
+          </motion.p>
+
+          <motion.p
+            variants={itemVariant}
+            className="max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
+          >
+            University of Toronto student passionate about software development,
+            machine learning, and creating innovative solutions that solve
+            real-world problems.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            variants={itemVariant}
+            className="mt-2 flex flex-col gap-3 sm:flex-row"
+          >
+            <Button variant="brand" size="lg" asChild>
+              <Link href="#contact">
+                Contact me
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="#projects">View projects</Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                <FileText className="h-4 w-4" />
+                Resume
+              </a>
+            </Button>
+          </motion.div>
+
+          {/* Meta row */}
+          <motion.div
+            variants={itemVariant}
+            className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-xs text-muted-foreground"
+          >
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="h-3.5 w-3.5" />
+              Toronto, ON
+            </span>
+            {facts.map((fact) => (
+              <span key={fact} className="inline-flex items-center gap-3">
+                <span aria-hidden className="text-border">
+                  /
+                </span>
+                {fact}
+              </span>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }
