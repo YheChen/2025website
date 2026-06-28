@@ -10,7 +10,10 @@ const facts = ["Computer Science", "Mathematics", "Statistics"];
 
 export default function Home() {
   return (
-    <section id="home" className="relative isolate overflow-hidden scroll-mt-24">
+    <section
+      id="home"
+      className="relative isolate overflow-hidden scroll-mt-24"
+    >
       {/* Decorative background */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid mask-fade-b opacity-70" />
@@ -63,8 +66,8 @@ export default function Home() {
           <Reveal delay={0.28}>
             <p className="max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               University of Toronto student passionate about software
-              development, machine learning, and creating innovative solutions
-              that solve real-world problems.
+              development, system design, and creating innovative solutions that
+              solve real-world problems.
             </p>
           </Reveal>
 
