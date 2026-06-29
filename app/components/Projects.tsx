@@ -18,7 +18,7 @@ export default function Projects() {
         index="02"
         label="Projects"
         title="Things I've designed, built, and shipped."
-        description="A selection of personal projects, hackathon builds, and tools — spanning web apps, machine learning, and developer utilities."
+        description="A selection of personal projects, hackathon builds, and tools, spanning web apps, machine learning, and developer utilities."
       />
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

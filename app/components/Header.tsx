@@ -52,7 +52,7 @@ export default function Header() {
             <Link
               href="/"
               className="flex items-center"
-              aria-label="Yanzhen Chen — home"
+              aria-label="Yanzhen Chen, home"
             >
               <span className="text-[0.95rem] font-semibold tracking-tight">
                 Yanzhen Chen

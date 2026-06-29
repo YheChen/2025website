@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Yanzhen Chen",
   },
   description:
-    "Yanzhen Chen — Computer Science, Mathematics & Statistics student at the University of Toronto, building software, machine learning, and thoughtful products.",
+    "Yanzhen Chen, Computer Science, Mathematics & Statistics student at the University of Toronto, building software, machine learning, and thoughtful products.",
   keywords: [
     "Yanzhen Chen",
     "Software Developer",

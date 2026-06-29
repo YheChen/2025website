@@ -30,7 +30,7 @@ export default function Footer() {
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Computer Science, Mathematics &amp; Statistics student at the
-              University of Toronto — building software, machine learning, and
+              University of Toronto, building software, machine learning, and
               thoughtful products.
             </p>
           </div>

@@ -4,13 +4,13 @@ import Reveal from "./Reveal";
 
 const paragraphs = [
   "I'm a Computer Science Major at the University of Toronto with minors in Mathematics and Statistics. I have a strong foundation in programming principles and a passion for building efficient, reliable software.",
-  "My academic journey combines mathematical rigor with hands-on software development. I'm particularly interested in software development and systems — designing full-stack applications, backend services, and developer tooling that solve real-world problems.",
+  "My academic journey combines mathematical rigor with hands-on software development. I'm particularly interested in software development and systems, designing full-stack applications, backend services, and developer tooling that solve real-world problems.",
   "I've been actively involved in the Computer Science Student Union as the President, after serving as Vice President of External Relations for two years, where I secured sponsorships and organized events to enhance professional development opportunities for students.",
   "I'm currently seeking internship opportunities where I can apply my skills in software development and systems to contribute to meaningful, real-world projects.",
 ];
 
 const highlights = [
-  { label: "Education", value: "HBSc Computer Science — Math & Stats minors" },
+  { label: "Education", value: "HBSc Computer Science, Math & Stats minors" },
   {
     label: "Focus",
     value: "Software development, systems & full-stack engineering",

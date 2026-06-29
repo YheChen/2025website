@@ -33,7 +33,7 @@ export default function Education() {
             <div className="min-w-0 flex-1">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                 <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                  HBSc. Computer Science Major — Mathematics &amp; Statistics
+                  HBSc. Computer Science Major, Mathematics &amp; Statistics
                   Minors, with Co-op
                 </h3>
                 <span className="shrink-0 font-mono text-xs uppercase tracking-wider text-muted-foreground">

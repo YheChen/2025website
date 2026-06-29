@@ -35,7 +35,7 @@ export const experience: ResumeEntry[] = [
     logo: "/EngCareerCentre.webp",
     logoAlt: "Engineering Career Centre logo",
     role: "Educational Technology & UX Developer",
-    org: "U of T, Faculty of Applied Science — Engineering Career Centre",
+    org: "U of T, Faculty of Applied Science, Engineering Career Centre",
     period: "May 2025 – Mar 2026",
     bullets: [
       "Developed digital learning platforms and UI/UX improvements for the PEY Co-op Hub, used by 5,000+ engineering PEY students, increasing content engagement by 25% through enhanced navigation and accessibility.",
@@ -74,7 +74,7 @@ export const leadership: ResumeEntry[] = [
     org: "IQBank, Toronto, ON · Hybrid",
     period: "May 2026 – Present",
     bullets: [
-      "Providing technical leadership for a 6-developer team building IQBank's administrative tooling — driving architecture decisions, defining engineering standards, reviewing designs and pull requests, and coordinating feature delivery across frontend and backend systems.",
+      "Providing technical leadership for a 6-developer team building IQBank's administrative tooling, driving architecture decisions, defining engineering standards, reviewing designs and pull requests, and coordinating feature delivery across frontend and backend systems.",
       "Led the design and implementation of user-management and course-administration tooling, including bulk user provisioning, enrollment workflows, and administrative dashboards.",
     ],
   },
@@ -94,7 +94,7 @@ export const leadership: ResumeEntry[] = [
     logo: "/placeholder-logo.svg",
     logoAlt: "MarkUs project logo",
     role: "Open Source Software Engineer",
-    org: "University of Toronto, Department of Computer Science — MarkUs Project · Toronto, ON",
+    org: "University of Toronto, Department of Computer Science, MarkUs Project · Toronto, ON",
     period: "May 2026 – Present",
     bullets: [
       "Contributed 7 merged pull requests to an open-source assignment management platform used by 5,000+ students, improving authentication, course administration, instructor workflows, and test infrastructure.",
@@ -127,7 +127,7 @@ export const leadership: ResumeEntry[] = [
 ];
 
 export const coursework: string[] = [
-  "CSC494: CS Project — IQBank",
+  "CSC494: CS Project, IQBank",
   "CSC485: Computational Linguistics",
   "CSC413: Neural Networks & Deep Learning",
   "CSC384: Intro to Artificial Intelligence",

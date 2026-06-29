@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** "YC" rendered as plain-ASCII block letters — used as faint branding. */
+/** "YC" rendered as plain-ASCII block letters, used as faint branding. */
 export const YC_ASCII = `##    ##    ######
  ##  ##    ##
   ####     ##
@@ -14,7 +14,7 @@ type AsciiArtProps = {
 };
 
 /**
- * Decorative ASCII artwork. Purely presentational — hidden from assistive tech
+ * Decorative ASCII artwork. Purely presentational, hidden from assistive tech
  * and non-interactive.
  */
 export default function AsciiArt({ art = YC_ASCII, className }: AsciiArtProps) {

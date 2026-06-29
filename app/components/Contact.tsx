@@ -81,7 +81,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold">Message sent</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Thanks for reaching out — I&apos;ll be in touch soon.
+                    Thanks for reaching out, I&apos;ll be in touch soon.
                   </p>
                 </div>
               </div>

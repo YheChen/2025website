@@ -22,7 +22,7 @@ type RevealProps = {
  * Scroll-reveal wrapper. Fades + slides content in as it enters the viewport.
  *
  * Visibility is driven by a plain IntersectionObserver with a failsafe timeout,
- * so content can NEVER get permanently stuck hidden — even if the observer
+ * so content can NEVER get permanently stuck hidden, even if the observer
  * doesn't fire (e.g. a background-loaded tab) the timeout reveals it. Reduced
  * motion shows content instantly, and a <noscript> fallback covers no-JS.
  */
