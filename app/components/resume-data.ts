@@ -62,9 +62,9 @@ export const leadership: ResumeEntry[] = [
     org: "Computer Science Student Union, Toronto, ON",
     period: "May 2024 – Apr 2026",
     bullets: [
-      "Raised a total of $14,000 in sponsorships over two years by securing collaborations with 9 companies.",
-      "Led a team of 3 associates to organize 8 professional development events, including information sessions, resume review panels, and networking mixers that connected over 700 students with industry representatives.",
-      "Hosted 2 annual career fairs with cumulative attendance of over 1,000 students, connecting them with employers for recruitment opportunities.",
+      "Raised a total of $14,300 in sponsorships over two years by securing collaborations with 10 companies.",
+      "Led a team of 3 associates to organize 8 professional development events, including information sessions, resume review panels, and networking mixers.",
+      "Hosted 3 career fairs connecting students with employers for recruitment opportunities; events and fairs reached over 2,300 students combined.",
     ],
   },
   {
@@ -107,10 +107,8 @@ export const leadership: ResumeEntry[] = [
     org: "University of Toronto Machine Intelligence Team",
     period: "May 2025 – Present",
     bullets: [
-      "Built responsive UI components using React and Tailwind, improving frontend usability and reducing bounce rate.",
-      "Optimized backend APIs with caching and async handlers, reducing load time by 30% for 500+ monthly users.",
-      "Used GitHub Actions to build CI/CD pipelines for automated testing, linting, and production deployment.",
-      "Wrote and maintained internal documentation for both frontend components and backend API usage to ensure long-term maintainability and team onboarding.",
+      "Developed features for a Next.js, TypeScript, and Supabase platform serving 1,500+ monthly visitors, including administrative tooling and access-control functionality.",
+      "Contributed 15 merged pull requests implementing administrative tooling, responsive interfaces, analytics integration, and performance improvements.",
     ],
   },
   {

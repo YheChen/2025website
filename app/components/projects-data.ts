@@ -11,8 +11,9 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "TorontoGuessr",
-    description: "Test your knowledge of downtown Toronto",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
+    description:
+      "Street View geolocation game that tests your knowledge of downtown Toronto, averaging 300 monthly players across 2,000+ playable locations.",
+    tech: ["TypeScript", "Next.js", "Tailwind", "Supabase", "Google Maps API"],
     imgAlt: "TorontoGuessr",
     imgSrc: "/projects/TorontoGuessrThumbnail.webp",
     github: "https://github.com/YheChen/TorontoGuessr",
