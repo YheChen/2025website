@@ -19,6 +19,16 @@ export const projects: Project[] = [
     demo: "https://torontoguessr.ca/",
   },
   {
+    title: "NovaOS",
+    description:
+      "Browser-based operating-systems lab that compiles a toy language through a real toolchain and lets you time-travel through CPU, memory, and syscalls.",
+    tech: ["TypeScript", "Turborepo", "Vitest", "Playwright"],
+    imgAlt: "NovaOS",
+    imgSrc: "/projects/placeholder-project.svg",
+    github: "https://github.com/YheChen/NovaOS",
+    demo: "https://nova-os-lab.vercel.app/",
+  },
+  {
     title: "LeetCord",
     description:
       "Discord bot for LeetCode communities with linking, daily tracking, streaks, and leaderboards.",
@@ -35,6 +45,36 @@ export const projects: Project[] = [
     imgAlt: "Train in a Snap",
     imgSrc: "/projects/TrainInASnapThumbnail.webp",
     github: "https://github.com/krishh-p/train-in-a-snap",
+  },
+  {
+    title: "Wordle Solver",
+    description:
+      "Information-theory Wordle solver that recommends the highest-entropy next guess, with a Next.js UI and FastAPI backend.",
+    tech: ["Next.js", "TypeScript", "FastAPI", "Python", "NumPy"],
+    imgAlt: "Wordle Solver",
+    imgSrc: "/projects/placeholder-project.svg",
+    github: "https://github.com/YheChen/WordleSolver",
+    demo: "https://wordle-solver-chen.vercel.app/",
+  },
+  {
+    title: "EyeTrack Ad Demo",
+    description:
+      "A demo ad that only plays while you're looking at it, using in-browser MediaPipe gaze tracking that never leaves the device.",
+    tech: ["React", "TypeScript", "Vite", "MediaPipe", "Tailwind"],
+    imgAlt: "EyeTrack Ad Demo",
+    imgSrc: "/projects/placeholder-project.svg",
+    github: "https://github.com/YheChen/UnethicalAdEyeTracker",
+    demo: "https://unethical-ad-eye-tracker.vercel.app/",
+  },
+  {
+    title: "Columns",
+    description:
+      "Browser remake of a MIPS assembly Columns puzzle game, reimplemented natively in TypeScript on Canvas.",
+    tech: ["TypeScript", "Vite", "Canvas", "Tone.js"],
+    imgAlt: "Columns",
+    imgSrc: "/projects/placeholder-project.svg",
+    github: "https://github.com/YheChen/Columns",
+    demo: "https://columns-258.vercel.app/",
   },
   {
     title: "Indoor Outdoor Classifier",

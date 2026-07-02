@@ -11,57 +11,93 @@ const skillCategories: { title: string; items: Skill[] }[] = [
     title: "Languages",
     items: [
       { label: "Python" },
-      { label: "Java" },
-      { label: "C" },
-      { label: "JavaScript" },
       { label: "TypeScript" },
+      { label: "JavaScript" },
+      { label: "Java" },
+      { label: "Ruby" },
+      { label: "Go" },
+      { label: "C" },
+      { label: "SQL" },
       { label: "HTML" },
       { label: "CSS" },
-      { label: "SQL" },
       { label: "R" },
     ],
   },
   {
-    title: "Frameworks & Libraries",
+    title: "Frameworks",
     items: [
+      { label: "React" },
       { label: "Next.js" },
       { label: "Node.js" },
-      { label: "Tailwind" },
-      { label: "React.js" },
-      { label: "React Native", short: "React Native" },
-      { label: "Pandas" },
-      { label: "NumPy" },
-      { label: "Matplotlib" },
-      { label: "Scikitlearn", short: "scikit-learn" },
-      { label: "PyTorch" },
-      { label: "Flask" },
+      { label: "Express" },
+      { label: "React Native" },
+      { label: "Expo" },
+      { label: "Vite" },
+      { label: "AWS Lambda" },
+      { label: "Tailwind CSS" },
+      { label: "Ruby on Rails" },
     ],
   },
   {
-    title: "Developer Tools",
+    title: "Databases & Infrastructure",
     items: [
+      { label: "PostgreSQL" },
+      { label: "MySQL" },
       { label: "MongoDB" },
       { label: "Firebase" },
-      { label: "Colab" },
-      { label: "Jupyter" },
-      { label: "SAS Studio", short: "SAS" },
-      { label: "Figma" },
-      { label: "Markdown" },
+      { label: "Supabase" },
+      { label: "Prisma" },
+      { label: "Docker" },
+      { label: "Nginx" },
+    ],
+  },
+  {
+    title: "Developer Tools & ML",
+    items: [
+      { label: "Git" },
+      { label: "GitHub Actions" },
+      { label: "PyTorch" },
+      { label: "scikit-learn" },
+      { label: "OpenCV" },
+      { label: "Pandas" },
+      { label: "NumPy" },
+      { label: "Matplotlib" },
     ],
   },
 ];
 
-const skillImageMap: Record<string, string> = {
-  "React Native": "reactnative",
-  "Google Colab": "googlecolab",
-  "Java Swing": "javaswing",
-  "SAS Studio": "sas",
+/**
+ * Explicit icon filenames (with extension) for labels whose derived name
+ * doesn't match a file in /public/skills. Everything else resolves to
+ * `<label-lowercased-no-spaces-or-dots>.webp`.
+ */
+const skillIconOverrides: Record<string, string> = {
+  React: "reactjs.webp",
+  "React Native": "reactnative.webp",
+  "Tailwind CSS": "tailwind.webp",
+  "scikit-learn": "scikitlearn.webp",
+  Ruby: "ruby.svg",
+  Go: "go.svg",
+  Express: "express.svg",
+  Expo: "expo.svg",
+  Vite: "vite.svg",
+  "AWS Lambda": "awslambda.svg",
+  "Ruby on Rails": "rubyonrails.svg",
+  PostgreSQL: "postgresql.svg",
+  MySQL: "mysql.svg",
+  Supabase: "supabase.svg",
+  Prisma: "prisma.svg",
+  Docker: "docker.svg",
+  Nginx: "nginx.svg",
+  "GitHub Actions": "githubactions.svg",
+  OpenCV: "opencv.svg",
 };
 
 function logoFor(label: string): string {
   const fileName =
-    skillImageMap[label] || label.toLowerCase().replace(/\s|\./g, "");
-  return `/skills/${fileName}.webp`;
+    skillIconOverrides[label] ||
+    `${label.toLowerCase().replace(/\s|\./g, "")}.webp`;
+  return `/skills/${fileName}`;
 }
 
 export default function Skills() {
