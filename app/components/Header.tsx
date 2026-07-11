@@ -15,6 +15,7 @@ import {
   Mail,
   Menu,
   X,
+  PenLine,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -93,6 +94,17 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hidden sm:inline-flex"
+              asChild
+            >
+              <Link href="/blog">
+                <PenLine className="h-4 w-4" />
+                Blog
+              </Link>
+            </Button>
             <div className="hidden items-center gap-1 sm:flex">
               {socials.map(({ href, label, icon: Icon }) => (
                 <Button key={label} variant="ghost" size="icon" asChild>
@@ -189,6 +201,14 @@ export default function Header() {
                     {label}
                   </Link>
                 ))}
+                <Link
+                  href="/blog"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  <PenLine className="h-5 w-5 text-brand" />
+                  Blog
+                </Link>
               </nav>
 
               <div className="mt-auto flex flex-col gap-4 pt-6">
