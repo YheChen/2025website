@@ -1,46 +1,76 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, PenLine } from "lucide-react";
+import { ArrowUpRight, PenLine } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import AsciiArt from "../components/AsciiArt";
+import Section from "../components/Section";
+import SectionHeading from "../components/SectionHeading";
+import Reveal from "../components/Reveal";
+import PostCard from "../components/PostCard";
+import { getAllPosts } from "@/lib/blog";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Writing and notes from Yanzhen Chen. Coming soon.",
+  description:
+    "Writing and notes from Yanzhen Chen on software, systems, and the things I build.",
 };
 
-export default function BlogPage() {
+export default function BlogIndex() {
+  const posts = getAllPosts();
+
   return (
-    <main className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-grid mask-radial opacity-60" />
-        <div className="absolute left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full glow-brand opacity-40 blur-2xl" />
-        <AsciiArt className="absolute left-1/2 top-10 -translate-x-1/2 text-base text-foreground/[0.06] sm:text-xl" />
-      </div>
+    <Section className="py-16 md:py-20">
+      <SectionHeading
+        label="Blog"
+        title="Writing & notes."
+        description="Thoughts on software, systems, and the things I build. Occasional deeper dives."
+      />
 
-      <span className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-card text-brand shadow-soft">
-        <PenLine className="h-6 w-6" />
-      </span>
+      {posts.length > 0 ? (
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {posts.map((post, index) => (
+            <PostCard key={post.slug} post={post} delay={(index % 2) * 0.08} />
+          ))}
+        </div>
+      ) : (
+        <Reveal className="mt-12">
+          <div className="flex flex-col items-center gap-4 rounded-2xl border border-border bg-card px-6 py-16 text-center shadow-soft">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-background text-brand">
+              <PenLine className="h-5 w-5" />
+            </span>
+            <div>
+              <h3 className="text-lg font-semibold">No posts yet</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                First post is coming soon. Check back shortly.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      )}
 
-      <span className="eyebrow mb-4">
-        <span className="text-brand">Blog</span>
-        <span aria-hidden className="h-px w-6 bg-border" />
-        Work in progress
-      </span>
-      <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
-        Coming soon.
-      </h1>
-      <p className="mt-4 max-w-md text-pretty text-base leading-relaxed text-muted-foreground">
-        I&rsquo;m putting together a space for writing and notes on software,
-        systems, and whatever I&rsquo;m building. Check back shortly.
-      </p>
-      <Button variant="brand" size="lg" asChild className="mt-8">
-        <Link href="/">
-          <ArrowLeft className="h-4 w-4" />
-          Back home
-        </Link>
-      </Button>
-    </main>
+      {/* Eats Toronto cross-link */}
+      <Reveal delay={0.1} className="mt-12">
+        <a
+          href={siteConfig.eats}
+          target="_blank"
+          rel="noreferrer"
+          className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/15 hover:shadow-soft-lg"
+        >
+          <div className="flex items-center gap-4">
+            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-border bg-background text-2xl">
+              🍜
+            </span>
+            <div>
+              <h3 className="font-semibold tracking-tight text-foreground">
+                Eats Toronto
+              </h3>
+              <p className="mt-0.5 text-pretty text-sm text-muted-foreground">
+                My separate blog on restaurants and food around the city.
+              </p>
+            </div>
+          </div>
+          <ArrowUpRight className="h-5 w-5 flex-shrink-0 text-muted-foreground transition-colors group-hover:text-brand" />
+        </a>
+      </Reveal>
+    </Section>
   );
 }

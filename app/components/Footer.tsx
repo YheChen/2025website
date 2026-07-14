@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 
+import { siteConfig } from "@/lib/site";
+
 const footerNav = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
@@ -46,6 +48,24 @@ export default function Footer() {
                 {label}
               </Link>
             ))}
+          </nav>
+
+          <nav className="flex flex-col gap-3">
+            <span className="eyebrow">Explore</span>
+            <Link
+              href="/blog"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Blog
+            </Link>
+            <a
+              href={siteConfig.eats}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Eats Toronto
+            </a>
           </nav>
 
           <div className="flex flex-col gap-3">
