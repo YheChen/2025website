@@ -33,7 +33,6 @@ const skillCategories: { title: string; items: Skill[] }[] = [
       { label: "React Native" },
       { label: "Expo" },
       { label: "Vite" },
-      { label: "AWS Lambda" },
       { label: "Tailwind CSS" },
       { label: "Ruby on Rails" },
     ],
@@ -41,10 +40,8 @@ const skillCategories: { title: string; items: Skill[] }[] = [
   {
     title: "Databases & Infrastructure",
     items: [
+      { label: "AWS" },
       { label: "PostgreSQL" },
-      { label: "MySQL" },
-      { label: "MongoDB" },
-      { label: "Firebase" },
       { label: "Supabase" },
       { label: "Prisma" },
       { label: "Docker" },
@@ -78,6 +75,7 @@ const skillIconOverrides: Record<string, string> = {
   "scikit-learn": "scikitlearn.webp",
   Ruby: "ruby.svg",
   Go: "go.svg",
+  AWS: "aws.svg",
   Express: "express.svg",
   Expo: "expo.svg",
   Vite: "vite.svg",

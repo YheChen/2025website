@@ -1,0 +1,59 @@
+---
+title: "Rebuilding my portfolio in 2026"
+description: "Notes on redesigning this site: a premium, minimal design system, self-hosted fonts, and resilient scroll animations."
+date: "2026-07-11"
+tags: ["Next.js", "Design", "TypeScript"]
+---
+
+I recently rebuilt this site from the ground up. The goal wasn't to change what
+it says about me, but *how* it says it: bigger type, more whitespace, subtle
+motion, and a consistent design language across every section.
+
+## The design system
+
+Everything is driven by a small set of tokens and primitives instead of one-off
+styles. A few decisions that paid off:
+
+- A single **brand accent** (indigo) used sparingly for emphasis.
+- Self-hosted **Geist Sans + Geist Mono** so there's no build-time font fetch.
+- Reusable `Section`, `SectionHeading`, and `Reveal` primitives so every section
+  shares the same rhythm.
+
+> Consistency is a feature. When the spacing, borders, and type scale are shared,
+> new sections look right by default.
+
+## Resilient animations
+
+Scroll-reveal is great until it isn't — a background-loaded tab or a missed
+`IntersectionObserver` callback can leave content stuck invisible. The fix was a
+plain observer with a failsafe timeout:
+
+```tsx
+useEffect(() => {
+  const el = ref.current;
+  if (!el) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some((e) => e.isIntersecting)) {
+      setShown(true);
+      observer.disconnect();
+    }
+  });
+  observer.observe(el);
+
+  // Never leave content hidden, even if the observer never fires.
+  const failsafe = window.setTimeout(() => setShown(true), 1400);
+  return () => {
+    observer.disconnect();
+    window.clearTimeout(failsafe);
+  };
+}, []);
+```
+
+## What's next
+
+1. Writing more here, about the things I build.
+2. A separate space for food — see [Eats Toronto](https://restaurant-blog-rho.vercel.app).
+3. Small, steady improvements to the site itself.
+
+Thanks for reading.

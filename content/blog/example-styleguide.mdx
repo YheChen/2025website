@@ -1,0 +1,116 @@
+---
+title: "Styleguide: every element, one page"
+description: "A kitchen-sink example post for testing the blog — headings, lists, tables, code blocks, quotes, images, and more. Marked as a draft so it only shows in local development."
+date: "2026-07-14"
+tags: ["Example", "Markdown", "Testing"]
+draft: true
+---
+
+This is an example post used to test the blog's rendering. It exercises every
+formatting element in one place. It's a **draft**, so it appears while running
+`npm run dev` but is hidden from the live site.
+
+## Text formatting
+
+You can write **bold text**, *italic text*, ***both at once***, and
+~~strikethrough~~. Inline `code` looks like this, and here's a
+[link to the home page](/) alongside an
+[external link](https://vercel.com) that opens in a new tab.
+
+Here's a longer paragraph to check line length and leading. Good typography is
+mostly about restraint: a comfortable measure, generous line height, and clear
+hierarchy. The body text should sit at a size that's easy to read without
+feeling oversized, and links should be obvious without shouting.
+
+## Lists
+
+An unordered list:
+
+- First item
+- Second item, with a bit more text to see how wrapping behaves inside a list
+- Third item
+  - A nested item
+  - Another nested item
+
+An ordered list:
+
+1. Set up the project
+2. Write some content
+3. Ship it
+
+A task list:
+
+- [x] Build the blog
+- [x] Add syntax highlighting
+- [ ] Write more posts
+
+## Blockquote
+
+> Design is not just what it looks like and feels like. Design is how it works.
+>
+> — someone, probably
+
+## Code blocks
+
+TypeScript:
+
+```ts
+type Post = {
+  slug: string;
+  title: string;
+  tags: string[];
+};
+
+export function titleOf(post: Post): string {
+  return post.title.trim() || "Untitled";
+}
+```
+
+Python:
+
+```python
+def fib(n: int) -> int:
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+
+print([fib(i) for i in range(10)])
+```
+
+A shell command:
+
+```bash
+pnpm dev
+```
+
+And some JSON:
+
+```json
+{
+  "name": "example",
+  "tags": ["markdown", "mdx"],
+  "draft": true
+}
+```
+
+## Table
+
+| Feature          | Supported | Notes                         |
+| ---------------- | --------- | ----------------------------- |
+| Headings         | Yes       | With anchor ids               |
+| Syntax highlight | Yes       | Shiki, github-dark-dimmed     |
+| Tables           | Yes       | Via remark-gfm                |
+| Footnotes        | Yes       | See below[^1]                 |
+
+## Image
+
+![Yanzhen Chen](/YanzhenSquare.webp)
+
+## A final section
+
+That's the full set. If everything above renders cleanly in both light and dark
+mode, the blog is working as intended.
+
+[^1]: Footnotes are provided by remark-gfm and render at the bottom of the post.
