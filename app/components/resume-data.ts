@@ -91,7 +91,7 @@ export const leadership: ResumeEntry[] = [
     ],
   },
   {
-    logo: "/placeholder-logo.svg",
+    logo: "/markuslogo.webp",
     logoAlt: "MarkUs project logo",
     role: "Open Source Software Engineer",
     org: "University of Toronto, Department of Computer Science, MarkUs Project · Toronto, ON",
