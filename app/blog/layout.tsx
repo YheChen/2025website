@@ -3,6 +3,8 @@ import { Github, Linkedin, UtensilsCrossed } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
+// TEMPORARY: remove along with PlaceholderNotice.tsx once real posts are live.
+import PlaceholderNotice from "./PlaceholderNotice";
 
 export default function BlogLayout({
   children,
@@ -50,6 +52,9 @@ export default function BlogLayout({
           </nav>
         </div>
       </header>
+
+      {/* TEMPORARY: AI placeholder-content notice */}
+      <PlaceholderNotice />
 
       <main className="flex-1">{children}</main>
 
