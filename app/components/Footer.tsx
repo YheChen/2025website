@@ -64,7 +64,7 @@ export default function Footer() {
               rel="noreferrer"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Eats Toronto
+              TorontoEats
             </a>
           </nav>
 

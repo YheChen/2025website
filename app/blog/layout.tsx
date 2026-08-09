@@ -77,7 +77,7 @@ export default function BlogLayout({
               className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
             >
               <UtensilsCrossed className="h-4 w-4" />
-              Eats Toronto
+              TorontoEats
             </a>
           </div>
         </div>

@@ -47,7 +47,7 @@ export default function BlogIndex() {
         </Reveal>
       )}
 
-      {/* Eats Toronto cross-link */}
+      {/* TorontoEats cross-link */}
       <Reveal delay={0.1} className="mt-12">
         <a
           href={siteConfig.eats}
@@ -61,7 +61,7 @@ export default function BlogIndex() {
             </span>
             <div>
               <h3 className="font-semibold tracking-tight text-foreground">
-                Eats Toronto
+                TorontoEats
               </h3>
               <p className="mt-0.5 text-pretty text-sm text-muted-foreground">
                 My separate blog on restaurants and food around the city.
