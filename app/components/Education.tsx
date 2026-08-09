@@ -37,11 +37,22 @@ export default function Education() {
                   Minors, with Co-op
                 </h3>
                 <span className="shrink-0 font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Sep 2023 – Apr 2027
+                  Sep 2023 – Apr 2028
                 </span>
               </div>
               <p className="mt-0.5 text-sm font-medium text-muted-foreground">
                 University of Toronto
+              </p>
+              <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-muted-foreground">
+                <span>
+                  CS GPA: <span className="text-foreground">3.82</span>
+                </span>
+                <span aria-hidden className="text-border">
+                  /
+                </span>
+                <span>
+                  Cumulative GPA: <span className="text-foreground">3.33</span>
+                </span>
               </p>
 
               <div className="mt-6 border-t border-border pt-5">

@@ -46,7 +46,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              Open to internship opportunities
+              Seeking Summer 2027 Internship/Co-op Opportunities
             </span>
           </Reveal>
 

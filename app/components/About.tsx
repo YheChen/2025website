@@ -15,7 +15,10 @@ const highlights = [
     label: "Focus",
     value: "Software development, systems & full-stack engineering",
   },
-  { label: "Status", value: "Open to internships & collaborations" },
+  {
+    label: "Status",
+    value: "Seeking Summer 2027 Internship/Co-op Opportunities",
+  },
 ];
 
 export default function About() {
