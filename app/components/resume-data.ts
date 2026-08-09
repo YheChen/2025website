@@ -15,10 +15,9 @@ export const experience: ResumeEntry[] = [
     org: "Bree (YC S21), Toronto, ON",
     period: "May 2026 – Present",
     bullets: [
-      "Selected as 1 of 3 Software Engineering interns from a pool of 3,000+ applicants.",
-      "Sole engineer leading the production React Native app's migration from React Navigation to Expo Router (78 screens, 230+ call sites); scoped a 4-milestone / 25-ticket roadmap and built a dual-mode navigation shim enabling a zero-rewrite cutover.",
-      "Built and shipped full-stack product and internal tooling features in a TypeScript monorepo using React, Netlify Functions, AWS Lambda, and Supabase/Postgres, including schema-backed workflows for application defaults, manual disbursements, bank-account visibility, and financial investigations.",
-      "Built operational automation for Zendesk and Slack, implementing repeated-customer detection, duplicate-reply detection, refund routing, chargeback handling, and backend improvements for application-state accuracy.",
+      "Led the migration of Bree's production React Native application from React Navigation to Expo Router across 78 screens and 230+ navigation call sites; scoped a 4-milestone, 25-ticket roadmap, built migration infrastructure, and coordinated delivery through incremental releases.",
+      "Designed a dual-mode navigation architecture preserving all 9 existing helper APIs, implemented typed routes, deep-link ownership, analytics parity, and route-completeness validation, then verified both routing implementations against the application's 745-test Jest suite.",
+      "Built production full-stack features for a consumer fintech platform serving over 800,000 users using React, Material UI, AWS Lambda, Netlify Functions, and Supabase/PostgreSQL; delivered internal tooling, workflow automation, secure data exports, and operational improvements for customer-support teams.",
     ],
   },
   {
@@ -53,7 +52,9 @@ export const leadership: ResumeEntry[] = [
     role: "President",
     org: "Computer Science Student Union, Toronto, ON",
     period: "May 2026 – Present",
-    bullets: [],
+    bullets: [
+      "Lead a 10-person executive team, overseeing technical initiatives and student programming for the union.",
+    ],
   },
   {
     logo: "/CSSULOGO.webp",
@@ -74,8 +75,8 @@ export const leadership: ResumeEntry[] = [
     org: "IQBank, Toronto, ON · Hybrid",
     period: "May 2026 – Present",
     bullets: [
-      "Providing technical leadership for a 6-developer team building IQBank's administrative tooling, driving architecture decisions, defining engineering standards, reviewing designs and pull requests, and coordinating feature delivery across frontend and backend systems.",
-      "Led the design and implementation of user-management and course-administration tooling, including bulk user provisioning, enrollment workflows, and administrative dashboards.",
+      "Lead a team of 6 developers, driving architecture decisions, reviewing pull requests, mentoring newer contributors, and coordinating frontend and backend feature delivery.",
+      "Built administrative features using React, TypeScript, Node.js, Prisma, and PostgreSQL, including role-based access control and bulk CSV account creation for an exam-preparation platform serving 300+ students each semester.",
     ],
   },
   {
@@ -97,7 +98,7 @@ export const leadership: ResumeEntry[] = [
     org: "University of Toronto, Department of Computer Science, MarkUs Project · Toronto, ON",
     period: "May 2026 – Present",
     bullets: [
-      "Contributed 7 merged pull requests to an open-source assignment management platform used by 5,000+ students, improving authentication, course administration, instructor workflows, and test infrastructure.",
+      "Contributed 20 merged pull requests to MarkUs, an open-source Ruby on Rails assignment-management platform used by over 15,000 students across the University of Toronto, University of Waterloo, and École Centrale de Nantes, improving authentication, instructor workflows, course administration, and testing infrastructure.",
     ],
   },
   {
