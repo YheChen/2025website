@@ -30,6 +30,36 @@ export const projects: Project[] = [
     demo: "https://nova-os-lab.vercel.app/",
   },
   {
+    title: "ChenDB",
+    description:
+      "Relational database engine written from scratch in Python: pages, B+ trees, a cost-based planner, WAL recovery, and MVCC, with a visual explorer that shows the engine working as it runs.",
+    tech: ["Python", "TypeScript", "React", "Pyodide", "WebAssembly"],
+    imgAlt: "ChenDB visual database explorer",
+    imgSrc: "/projects/ChenDBThumbnail.webp",
+    github: "https://github.com/YheChen/ChenDB",
+    demo: "https://chen-db.vercel.app",
+  },
+  {
+    title: "FPS Engine",
+    description:
+      "Custom C++23 game engine and the online multiplayer shooter built on it, with an authoritative dedicated server, client-side prediction, snapshot interpolation, and lag compensation.",
+    tech: ["C++", "CMake", "WebAssembly", "Catch2"],
+    imgAlt: "FPS Engine multiplayer arena",
+    imgSrc: "/projects/FPSThumbnail.webp",
+    github: "https://github.com/YheChen/FPS",
+    demo: "https://fps.yanzhenchen.ca/",
+  },
+  {
+    title: "CMemoryViz",
+    description:
+      "Browser-based visualizer for C memory: write C and step through execution while the stack, heap, and pointer arrows build up, with breakpoints and an exam mode for practice.",
+    tech: ["TypeScript", "React", "Vite", "Monaco"],
+    imgAlt: "CMemoryViz memory diagram",
+    imgSrc: "/projects/CMemoryVizThumbnail.webp",
+    github: "https://github.com/YheChen/CMemoryViz",
+    demo: "https://c-memory-viz.vercel.app",
+  },
+  {
     title: "LeetCord",
     description:
       "Discord bot for LeetCode communities with linking, daily tracking, streaks, and leaderboards.",
@@ -37,6 +67,15 @@ export const projects: Project[] = [
     imgAlt: "LeetCord",
     imgSrc: "/projects/LeetCordThumbnail.webp",
     github: "https://github.com/YheChen/LeetCord",
+  },
+  {
+    title: "Job Bot",
+    description:
+      "Discord bot that discovers software engineering internships across Ashby, Greenhouse, Lever, and Workday, then de-duplicates, scores, and posts them as rich embeds.",
+    tech: ["Python", "discord.py", "SQLAlchemy", "PostgreSQL", "Docker"],
+    imgAlt: "Job Bot",
+    imgSrc: "/projects/placeholder-project.svg",
+    github: "https://github.com/YheChen/Job-Bot",
   },
   {
     title: "Train in a Snap",
@@ -58,6 +97,15 @@ export const projects: Project[] = [
     demo: "https://wordle-solver-chen.vercel.app/",
   },
   {
+    title: "Gridwright",
+    description:
+      "Daily logic and word puzzle platform with four games, procedurally generated boards verified by a solver, seeded daily challenges, and full offline play.",
+    tech: ["Next.js", "TypeScript", "React", "Tailwind", "Zustand"],
+    imgAlt: "Gridwright puzzle platform",
+    imgSrc: "/projects/GridwrightThumbnail.webp",
+    github: "https://github.com/YheChen/LinkedinPractice",
+  },
+  {
     title: "EyeTrack Ad Demo",
     description:
       "A demo ad that only plays while you're looking at it, using in-browser MediaPipe gaze tracking that never leaves the device.",
@@ -66,6 +114,16 @@ export const projects: Project[] = [
     imgSrc: "/projects/EyeTrackerThumbnail.webp",
     github: "https://github.com/YheChen/UnethicalAdEyeTracker",
     demo: "https://unethical-ad-eye-tracker.vercel.app/",
+  },
+  {
+    title: "TorontoEats",
+    description:
+      "A personal map of every restaurant I've eaten at in Toronto, with ratings, cuisine filters, and 2D and 3D map views.",
+    tech: ["Next.js", "TypeScript", "Tailwind", "MapLibre", "Zustand"],
+    imgAlt: "TorontoEats restaurant map",
+    imgSrc: "/projects/TorontoEatsThumbnail.webp",
+    github: "https://github.com/YheChen/RestaurantBlog",
+    demo: "https://food.yanzhenchen.ca",
   },
   {
     title: "Columns",
