@@ -7,6 +7,6 @@ export const siteConfig = {
   github: "https://github.com/YheChen",
   linkedin: "https://linkedin.com/in/yanzhenchen",
   email: "career@yanzhenchen.ca",
-  /** Eats Toronto, the restaurant/food blog. */
+  /** TorontoEats, the restaurant/food blog. */
   eats: "https://food.yanzhenchen.ca",
 } as const;
