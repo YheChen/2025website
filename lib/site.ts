@@ -7,9 +7,6 @@ export const siteConfig = {
   github: "https://github.com/YheChen",
   linkedin: "https://linkedin.com/in/yanzhenchen",
   email: "career@yanzhenchen.ca",
-  /**
-   * Eats Toronto — restaurant blog. Swap to the subdomain
-   * (e.g. https://eats.yanzhenchen.ca) once DNS is set up.
-   */
-  eats: "https://restaurant-blog-rho.vercel.app",
+  /** Eats Toronto, the restaurant/food blog. */
+  eats: "https://food.yanzhenchen.ca",
 } as const;
