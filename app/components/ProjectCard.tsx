@@ -11,10 +11,24 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
+  // The thumbnail links to the live demo when there is one, else the source.
+  const previewHref = project.demo
+    ? ensureHttps(project.demo)
+    : project.github;
+  const previewLabel = project.demo
+    ? `${project.title}: open live demo`
+    : `${project.title}: view source on GitHub`;
+
   return (
     <Reveal delay={delay} className="h-full">
       <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-foreground/15 hover:shadow-soft-lg">
-        <div className="relative aspect-video overflow-hidden border-b border-border bg-muted">
+        <a
+          href={previewHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={previewLabel}
+          className="relative block aspect-video overflow-hidden border-b border-border bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+        >
           <Image
             src={project.imgSrc}
             alt={project.imgAlt || project.title}
@@ -23,7 +37,7 @@ export default function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
             className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             draggable={false}
           />
-        </div>
+        </a>
 
         <div className="flex flex-1 flex-col p-5">
           <h3 className="text-base font-semibold tracking-tight text-foreground">
