@@ -104,6 +104,7 @@ export const projects: Project[] = [
     imgAlt: "Gridwright puzzle platform",
     imgSrc: "/projects/GridwrightThumbnail.webp",
     github: "https://github.com/YheChen/LinkedinPractice",
+    demo: "https://linkedin-games-tryhard.vercel.app/",
   },
   {
     title: "EyeTrack Ad Demo",
