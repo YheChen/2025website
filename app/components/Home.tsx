@@ -25,15 +25,15 @@ export default function Home() {
         <div className="flex flex-col items-center gap-6">
           {/* Avatar */}
           <Reveal delay={0} className="relative">
-            <div className="absolute -inset-3 rounded-full glow-brand opacity-50 blur-xl" />
+            <div className="absolute -inset-4 rounded-full glow-brand opacity-50 blur-xl" />
             <div className="relative rounded-full bg-gradient-to-br from-brand/60 via-border to-transparent p-[2px] shadow-soft-lg">
               <Image
                 src="/YanzhenSquare.webp"
                 alt="Yanzhen Chen"
-                width={144}
-                height={144}
+                width={208}
+                height={208}
                 priority
-                className="h-32 w-32 rounded-full border-4 border-background object-cover sm:h-36 sm:w-36"
+                className="h-44 w-44 rounded-full border-4 border-background object-cover sm:h-52 sm:w-52"
                 draggable={false}
               />
             </div>
