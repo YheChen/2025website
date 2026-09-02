@@ -88,16 +88,6 @@ export const projects: Project[] = [
     demo: "https://pokescale.vercel.app/",
   },
   {
-    title: "Gridwright",
-    description:
-      "Daily logic and word puzzle platform with four games, procedurally generated boards verified by a solver, seeded daily challenges, and full offline play.",
-    tech: ["Next.js", "TypeScript", "React", "Tailwind", "Zustand"],
-    imgAlt: "Gridwright puzzle platform",
-    imgSrc: "/projects/GridwrightThumbnail.webp",
-    github: "https://github.com/YheChen/LinkedinPractice",
-    demo: "https://linkedin-games-tryhard.vercel.app/",
-  },
-  {
     title: "Train in a Snap",
     description:
       "Immersive AR safety training prototype with real-time voice guidance.",
@@ -115,6 +105,16 @@ export const projects: Project[] = [
     imgSrc: "/projects/WordleSolverThumbnail.webp",
     github: "https://github.com/YheChen/WordleSolver",
     demo: "https://wordle-solver-chen.vercel.app/",
+  },
+  {
+    title: "Gridwright",
+    description:
+      "Daily logic and word puzzle platform with four games, procedurally generated boards verified by a solver, seeded daily challenges, and full offline play.",
+    tech: ["Next.js", "TypeScript", "React", "Tailwind", "Zustand"],
+    imgAlt: "Gridwright puzzle platform",
+    imgSrc: "/projects/GridwrightThumbnail.webp",
+    github: "https://github.com/YheChen/LinkedinPractice",
+    demo: "https://linkedin-games-tryhard.vercel.app/",
   },
   {
     title: "EyeTrack Ad Demo",
